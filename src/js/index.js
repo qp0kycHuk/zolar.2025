@@ -3,6 +3,7 @@ import fancybox from "./fancybox";
 import rangeSlider from './range-slider';
 import theme from './theme';
 import phonemask from "./phonemask";
+import ymaps from "./ymaps";
 import scrollTo from "./scrollTo";
 import tab from 'npm-kit-tab';
 import toggle from 'npm-kit-toggle';
@@ -27,6 +28,7 @@ function loadHandler() {
 	toggle.init()
 	ripple.init()
 	theme.init()
+	ymaps.init()
 	phonemask.init('[type="tel"]')
 
 	ripple.attach('.btn')

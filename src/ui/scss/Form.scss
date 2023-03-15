@@ -4,16 +4,8 @@
 			display: block;
 			cursor: pointer;
 			position: relative;
-			--error-color: var(--color-red);
-			--field-color: var(--color-primary);
-		}
-
-		&-helper {
-			font-size: 12px;
-			width: max-content;
-			margin-left: auto;
-			margin-top: 2px;
-			color: var(--color-text-60);
+			--error-color: theme(colors.red.DEFAULT);
+			--field-color: theme(colors.primary.DEFAULT);
 		}
 
 		&-input-cover {
@@ -44,10 +36,9 @@
 
 			font-size: 14px;
 			font-family: var(--font-base);
-			color: var(--color-text);
 
 			background-color: var(--bg3);
-			border: 1px solid var(--color-text-10);
+			border: 1px solid theme('colors.gray.DEFAULT / 20%');
 
 			&:first-of-type {
 				border-start-start-radius: var(--radius);
@@ -65,18 +56,18 @@
 
 
 			&:focus {
-				border-color: var(--color-icon);
+				border-color: var(--field-color);
 				z-index: 2;
 			}
 
 			&:disabled {
-				color: var(--color-text-60);
-				border: 1px solid var(--color-text-10);
+				color: theme('colors.gray.DEFAULT / 60%');
+				border: 1px solid theme('colors.gray.DEFAULT / 10%');
 				background-color: var(--bg2);
 				opacity: .8;
 
 				&:placeholder {
-					color: var(--color-text-60);
+					color: theme('colors.gray.DEFAULT / 60%');
 				}
 			}
 
@@ -95,18 +86,18 @@
 
 
 			&.active {
-				border-color: var(--color-primary);
-				box-shadow: 0 0 0 1px var(--color-primary);
+				border-color: theme('colors.primary.DEFAULT');
+				box-shadow: 0 0 0 1px theme('colors.primary.DEFAULT');
 				z-index: 2;
 			}
 
 			&.error {
-				color: var(--color-red);
-				border-color: var(--color-red);
+				color: var(--error-color);
+				border-color: var(--error-color);
 				z-index: 2;
 
 				&::placeholder {
-					color: var(--color-red);
+					color: var(--error-color);
 				}
 			}
 
@@ -168,7 +159,7 @@
 			width: var(--cover-width);
 			min-width: var(--cover-width);
 			height: var(--cover-height);
-			background: var(--color-text-40);
+			background: theme('colors.gray.DEFAULT / 40%');
 			border-radius: 20px;
 			position: relative;
 			overflow: hidden;
@@ -194,7 +185,7 @@
 		}
 
 		&-input-checkbox:checked~&-toggle-target {
-			background: var(--color-primary);
+			background: var(--field-color);
 
 			&::before {
 				transform: translateX(calc(var(--cover-width) - var(--size) - var(--padding) - var(--padding)));
@@ -204,7 +195,7 @@
 		&-checkbox-target {
 			// background         : linear-gradient(180deg, #FFFFFF 0%, rgba(176, 176, 176, 0.51) 100%), #FFFFFF;
 			background: var(--bg3);
-			border: 1px solid var(--color-text-40);
+			border: 1px solid theme('colors.gray.DEFAULT / 40%');
 			border-radius: 4px;
 			background-position: center;
 			display: block;
@@ -233,7 +224,7 @@
 			animation: check .3s forwards;
 
 			.icon {
-				color: var(--color-primary);
+				color: var(--field-color);
 				transform: scale(1);
 			}
 		}
@@ -241,7 +232,7 @@
 		&-radio-target {
 			// background         : linear-gradient(180deg, #FFFFFF 0%, rgba(176, 176, 176, 0.51) 100%), #FFFFFF;
 			background: var(--bg3);
-			border: 1px solid var(--color-text-40);
+			border: 1px solid theme('colors.gray.DEFAULT / 40%');
 			background-position: center;
 			min-width: 18px;
 			width: 18px;
@@ -262,7 +253,7 @@
 				border-radius: 50%;
 				display: block;
 				margin: auto;
-				background: var(--color-primary);
+				background: var(--field-color);
 
 				transition: .2s ease;
 				opacity: 0;
@@ -274,8 +265,6 @@
 		}
 
 		&-input-checkbox:checked+&-radio-target {
-			// border-color: var(--color-primary);
-			// background  : var(--color-primary);
 			animation: check .3s forwards;
 
 			&:before {
@@ -289,7 +278,7 @@
 
 			&-field:hover &-checkbox-target,
 			&-field:hover &-radio-target {
-				box-shadow: 0 0 0 5px var(--color-primary-10);
+				box-shadow: 0 0 0 5px theme('colors.primary.DEFAULT / 10%');
 			}
 		}
 
@@ -311,7 +300,7 @@
 				font-size: 10px;
 				right: 10px;
 				top: calc(50% - 5px);
-				color: var(--color-icon);
+				color: theme('colors.gray.DEFAULT / 10%');
 				z-index: 3;
 				pointer-events: none;
 			}
@@ -350,7 +339,7 @@
 
 	&-btn {
 		display: flex;
-		background: var(--color-primary);
+		background: theme('colors.primary.DEFAULT');
 		border: 3px solid var(--bg3);
 		box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.24);
 		position: absolute;
@@ -377,7 +366,7 @@
 		left: 0;
 		top: 12px;
 		height: 5px;
-		background: var(--color-primary);
+		background: theme('colors.primary.DEFAULT ');
 		border-radius: 0px 0px 6px 6px;
 		pointer-events: none;
 		transition: .1s;

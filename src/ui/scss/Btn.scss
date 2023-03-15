@@ -13,9 +13,7 @@
 		--size: 40px;
 		height: var(--size);
 		padding: 0 calc(var(--size) / 2);
-		border-radius: var(--radius-small);
 
-		font-size: 14px;
 		font-family: var(--font-base);
 		font-weight: bold;
 
@@ -26,12 +24,10 @@
 
 		&:focus:not(:active) {
 			background: var(--btn-color-light);
-
 		}
 
 		&:focus {
 			z-index: 2;
-
 		}
 
 		&:active {
