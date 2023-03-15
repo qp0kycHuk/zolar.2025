@@ -46,35 +46,9 @@ html {
     font-size: 16px;
 }
 
-html *,
-body *,
-html *::after,
-body *::after,
-html *::before,
-body *::before {
-    margin       : 0;
-    padding      : 0;
-    border       : none;
-    border-radius: 0;
-    box-sizing   : border-box;
-    outline: none;
-}
-
 sup {
     font-size: 0.6em;
 }
-
-
-
-
-input,
-textarea {
-    border: 1px solid rgb(121, 133, 141);
-
-    font-weight: 400;
-}
-
-
 
 label,
 button,
@@ -98,11 +72,6 @@ a {
     color          : inherit;
 }
 
-img[src=""],
-img[src="/"] {
-    display: none;
-}
-
 img {
     max-width  : 100%;
     object-fit: scale-down;
@@ -110,20 +79,11 @@ img {
     user-select: none;
 }
 
-ul li {
-    list-style: none;
-}
-
-ol li {
-    list-style: decimal;
-}
-
 hr {
     width     : 100%;
     height    : 1px;
     background: rgba(0, 0, 0, 0.1);
 }
-
 
 dialog {
     display : block;
