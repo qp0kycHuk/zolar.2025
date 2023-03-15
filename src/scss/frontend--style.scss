@@ -1,20 +1,15 @@
 @import '../ui/scss/_variables.scss';
-@import '../ui/scss/_functions.scss';
 
 :root {
-	@each $key, $value in $colors {
-        @include getColors($value, $key);
-    }
-
 	--bg1: #E9EAEC;
 	--bg2: #F4F5F6;
 	--bg3: #FFFFFF;
 
 	--spacing: 4px;
 
-	--radius-small : 4px;
+	--radius-small: 4px;
 	--radius-middle: 8px;
-	--radius-large : 12px;
+	--radius-large: 12px;
 
 	--media-lg: #{$lg};
 	--media-md: #{$md};
@@ -34,7 +29,6 @@
 }
 
 [data-theme="dark"] {
-	@include getColors(#ffffff, text);
 
 	--bg1: #181818;
 	--bg2: #282828;
@@ -42,10 +36,9 @@
 }
 
 body {
-	background    : var(--bg1);
-	color         : var(--color-text);
-	min-height    : 100vh;
-	display       : flex;
+	background: var(--bg1);
+	min-height: 100vh;
+	display: flex;
 	flex-direction: column;
 
 	* {

@@ -1,15 +1,14 @@
-
 :root {
-  --section-width     : calc(100vw - 30px);
-  --section-gap-top   : 20px;
+  --section-width: calc(100vw - 30px);
+  --section-gap-top: 20px;
   --section-gap-bottom: 20px;
 }
 
 
 .container {
-  width    : 100%;
+  width: 100%;
   max-width: var(--section-width);
-  margin   : 0 auto;
+  margin: 0 auto;
 }
 
 
@@ -22,20 +21,31 @@ footer {
 }
 
 section {
-  padding-top   : var(--section-gap-top);
+  padding-top: var(--section-gap-top);
   padding-bottom: var(--section-gap-bottom);
 }
 
 
-@media (min-width: $md) {
+@screen xs {
   :root {
-    --section-width: #{$container_md};
+    --section-width: calc(theme(screens.xs) - 29.98px);
   }
 }
 
-
-@media (min-width: $lg) {
+@screen sm {
   :root {
-    --section-width: #{$container_lg};
+    --section-width: calc(theme(screens.sm) - 29.98px);
+  }
+}
+
+@screen md {
+  :root {
+    --section-width: calc(theme(screens.md) - 29.98px);
+  }
+}
+
+@screen lg {
+  :root {
+    --section-width: calc(theme(screens.lg) - 29.98px);
   }
 }

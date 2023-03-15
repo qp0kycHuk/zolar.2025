@@ -15,7 +15,6 @@
 		pointer-events: none;
 	}
 
-
 	&--box,
 	&--rect {
 		&:before {
@@ -38,33 +37,10 @@
 		}
 	}
 
-
 	&--rect {
 		&:before {
 			padding-bottom: calc(100% * 3 / 4);
 		}
-	}
-
-	&--cover {
-		img {
-			object-fit: cover;
-		}
-	}
-
-	&--contain {
-		img {
-			object-fit: contain;
-		}
-	}
-
-	&--scale-down {
-		img {
-			object-fit: scale-down;
-		}
-	}
-
-	&--round {
-		border-radius: 50%;
 	}
 
 	&-action {

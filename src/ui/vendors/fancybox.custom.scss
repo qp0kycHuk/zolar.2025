@@ -6,7 +6,7 @@
 
   .fancybox__content,
   .fancybox__container {
-    color: var(--color-text);
+    @apply text-gray;
   }
 
   .fancybox__content {

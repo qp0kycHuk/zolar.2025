@@ -1,8 +1,16 @@
-@import 'npm-kit-ripple/index.css';
-@import "@fancyapps/ui/dist/fancybox.css";
-@import 'swiper/css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @import 'npm-kit-ripple/index.css';
+    @import "@fancyapps/ui/dist/fancybox.css";
+    @import 'swiper/css';
+}
+
 @import '../ui/ui-reset.scss';
 @import '../ui/ui-core.scss';
+
 @import '../ui/ui-example.scss';
 @import '../scss/frontend--fonts.scss';
 @import '../scss/frontend--style.scss';
