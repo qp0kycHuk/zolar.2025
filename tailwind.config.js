@@ -39,7 +39,8 @@ module.exports = {
     
   },
   plugins: [
-    require('./tailwind.button.js')
+    require('./tailwind.button.js'),
+    require('./tailwind.form.js'),
   ],
 }
 

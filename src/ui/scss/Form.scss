@@ -1,74 +1,26 @@
 @layer components {
 	.form {
-		&-field {
-			display      : block;
-			position     : relative;
-			--radius     : 8px;
-			--error-color: theme(colors.red.DEFAULT);
-			--field-color: theme(colors.primary.DEFAULT);
-
-			&--primary {
-				--field-color: theme(colors.primary.DEFAULT);
-			}
-
-			&--sec {
-				--field-color: theme(colors.sec.DEFAULT);
-			}
-
-			&--blue {
-				--field-color: theme(colors.blue.DEFAULT);
-			}
-
-			&--red {
-				--field-color: theme(colors.red.DEFAULT);
-			}
-
-			&--green {
-				--field-color: theme(colors.green.DEFAULT);
-			}
-
-			&--yellow {
-				--field-color: theme(colors.yellow.DEFAULT);
-			}
-
-			&--gray {
-				--field-color: theme(colors.gray.DEFAULT);
-			}
-		}
-
-		&-input-cover {
-			display    : flex;
-			align-items: center;
-			position   : relative;
-
-		}
-
 		&-input {
-			outline: none !important;
+			--size: theme('inputSize.base');
 			display: flex;
-			--size : 40px;
-
-			height   : var(--size);
-			position : relative;
-			padding  : theme('spacing.2') theme('spacing.4');
 			flex-grow: 1;
-
-			cursor    : inherit;
-			outline   : none;
-			appearance: none;
-
-			font-family: var(--font-base);
-
+			position: relative;
+			padding: theme('spacing.2') theme('spacing.4');
 			background-color: var(--bg3);
-			border          : 1px solid theme('colors.gray.DEFAULT / 20%');
+			border: 1px solid theme('colors.gray.DEFAULT / 20%');
+			outline: none !important;
+			outline: none;
+			font-family: var(--font-base);
+			cursor: inherit;
+			appearance: none;
 
 			&:first-of-type {
 				border-start-start-radius: var(--radius);
-				border-end-start-radius  : var(--radius);
+				border-end-start-radius: var(--radius);
 			}
 
 			&:last-of-type {
-				border-end-end-radius  : var(--radius);
+				border-end-end-radius: var(--radius);
 				border-start-end-radius: var(--radius);
 			}
 
@@ -76,18 +28,18 @@
 				margin-left: -1px;
 			}
 
-
+			&.active,
 			&:focus {
 				border-color: var(--field-color);
-				box-shadow  : 0 0 0 1px var(--field-color);
-				z-index     : 2;
+				box-shadow: 0 0 0 1px var(--field-color);
+				z-index: 2;
 			}
 
 			&:disabled {
-				color           : theme('colors.gray.DEFAULT / 60%');
-				border          : 1px solid theme('colors.gray.DEFAULT / 10%');
+				opacity: .8;
 				background-color: var(--bg2);
-				opacity         : .8;
+				border: 1px solid theme('colors.gray.DEFAULT / 10%');
+				color: theme('colors.gray.DEFAULT / 60%');
 
 				&:placeholder {
 					color: theme('colors.gray.DEFAULT / 60%');
@@ -102,32 +54,12 @@
 
 			&[type="date"]::-webkit-calendar-picker-indicator,
 			&[type="time"]::-webkit-calendar-picker-indicator {
-				background    : none;
+				background: none;
 				pointer-events: none;
 			}
 
-
-
-			&.active {
-				border-color: theme('colors.primary.DEFAULT');
-				box-shadow  : 0 0 0 1px theme('colors.primary.DEFAULT');
-				z-index     : 2;
-			}
-
-			&.error {
-				color       : var(--error-color);
-				border-color: var(--error-color);
-				z-index     : 2;
-
-				&::placeholder {
-					color: var(--error-color);
-				}
-			}
-
-
 			&:is(input) {
-				width         : 100px;
-				// line-height: 40px;
+				width: 100px;
 			}
 
 			&:is(textarea) {
@@ -137,12 +69,12 @@
 
 		&-input-start,
 		&-input-end {
-			position   : absolute;
-			top        : 0;
-			height     : 100%;
-			display    : flex;
+			display: flex;
 			align-items: center;
-			z-index    : 3;
+			position: absolute;
+			top: 0;
+			height: 100%;
+			z-index: 3;
 		}
 
 		&-input-start {
@@ -154,56 +86,56 @@
 		}
 
 		&-checkbox {
-			display    : flex;
+			display: flex;
 			align-items: center;
 		}
 
 
 		&-input-checkbox {
 			position: absolute;
-			left    : 0;
-			top     : 0;
-			width   : 0;
-			height  : 0;
+			top: 0;
+			left: 0;
+			width: 0;
+			height: 0;
 			overflow: hidden;
-			padding : 8px;
+			padding: 8px;
 
 			background: none;
-			border    : none;
-			outline   : none;
+			border: none;
 			box-shadow: none;
-			z-index   : -1;
+			outline: none;
+			z-index: -1;
 		}
 
 		&-toggle-target {
-			--cover-width : 46px;
+			--cover-width: 46px;
 			--cover-height: 26px;
-			--padding     : 2px;
-			width         : var(--cover-width);
-			min-width     : var(--cover-width);
-			height        : var(--cover-height);
-			background    : theme('colors.gray.DEFAULT / 40%');
-			border-radius : 20px;
-			position      : relative;
-			overflow      : hidden;
+			--padding: 2px;
+			position: relative;
+			width: var(--cover-width);
+			min-width: var(--cover-width);
+			height: var(--cover-height);
+			overflow: hidden;
+			background: theme('colors.gray.DEFAULT / 40%');
+			border-radius: 20px;
 
 			&:before {
 				--size: 22px;
 
-				content      : '';
-				width        : var(--size);
-				height       : var(--size);
-				border-radius: 50%;
-				background   : var(--bg3);
-
-				box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 3px 1px rgba(0, 0, 0, 0.06);
-				display   : block;
-
-				transition: .2s ease;
+				content: '';
+				display: block;
 
 				position: absolute;
-				left    : var(--padding);
-				top     : calc(50% - var(--size) / 2);
+				top: calc(50% - var(--size) / 2);
+				left: var(--padding);
+				width: var(--size);
+				height: var(--size);
+
+				transition: .2s ease;
+				background: var(--bg3);
+				border-radius: 50%;
+
+				box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 3px 1px rgba(0, 0, 0, 0.06);
 			}
 		}
 
@@ -216,26 +148,26 @@
 		}
 
 		&-checkbox-target {
-			// background         : linear-gradient(180deg, #FFFFFF 0%, rgba(176, 176, 176, 0.51) 100%), #FFFFFF;
-			background         : var(--bg3);
-			border             : 1px solid theme('colors.gray.DEFAULT / 40%');
-			border-radius      : 4px;
-			background-position: center;
-			display            : block;
-			min-width          : 18px;
-			width              : 18px;
-			height             : 18px;
+			display: block;
 
-			display        : flex;
-			align-items    : center;
+			display: flex;
+			align-items: center;
 			justify-content: center;
+			width: 18px;
+			min-width: 18px;
+			height: 18px;
+			// background         : linear-gradient(180deg, #FFFFFF 0%, rgba(176, 176, 176, 0.51) 100%), #FFFFFF;
+			background: var(--bg3);
+			background-position: center;
+			border: 1px solid theme('colors.gray.DEFAULT / 40%');
+			border-radius: 4px;
 
 			.icon {
-				font-size     : 12px;
-				color         : transparent;
+				transform: scale(0);
+				transition: .2s ease;
+				font-size: 12px;
+				color: transparent;
 				pointer-events: none;
-				transition    : .2s ease;
-				transform     : scale(0);
 			}
 
 
@@ -247,40 +179,40 @@
 			animation: check .3s forwards;
 
 			.icon {
-				color    : var(--field-color);
 				transform: scale(1);
+				color: var(--field-color);
 			}
 		}
 
 		&-radio-target {
-			// background         : linear-gradient(180deg, #FFFFFF 0%, rgba(176, 176, 176, 0.51) 100%), #FFFFFF;
-			background         : var(--bg3);
-			border             : 1px solid theme('colors.gray.DEFAULT / 40%');
-			background-position: center;
-			min-width          : 18px;
-			width              : 18px;
-			height             : 18px;
-			border-radius      : 50%;
 
 
-			display        : flex;
-			align-items    : center;
+			display: flex;
+			align-items: center;
 			justify-content: center;
+			width: 18px;
+			min-width: 18px;
+			height: 18px;
+			// background         : linear-gradient(180deg, #FFFFFF 0%, rgba(176, 176, 176, 0.51) 100%), #FFFFFF;
+			background: var(--bg3);
+			background-position: center;
+			border: 1px solid theme('colors.gray.DEFAULT / 40%');
+			border-radius: 50%;
 
 
 
 			&:before {
-				content      : '';
-				width        : 10px;
-				height       : 10px;
-				border-radius: 50%;
-				display      : block;
-				margin       : auto;
-				background   : var(--field-color);
+				content: '';
+				display: block;
+				width: 10px;
+				height: 10px;
+				margin: auto;
+				opacity: 0;
+				transform: scale(0);
 
 				transition: .2s ease;
-				opacity   : 0;
-				transform : scale(0);
+				background: var(--field-color);
+				border-radius: 50%;
 			}
 
 
@@ -291,16 +223,16 @@
 			animation: check .3s forwards;
 
 			&:before {
+				opacity: 1;
 				transform: none;
-				opacity  : 1;
 			}
 		}
 
 
-		@media (hover) {
+		&-field:hover &-checkbox-target,
+		&-field:hover &-radio-target {
+			@media (hover) {
 
-			&-field:hover &-checkbox-target,
-			&-field:hover &-radio-target {
 				box-shadow: 0 0 0 5px theme('colors.primary.DEFAULT / 10%');
 			}
 		}
@@ -311,9 +243,9 @@
 		&-checkbox &-input-checkbox:disabled~&-radio-target,
 		&-checkbox &-input-checkbox.disabled~&-checkbox-target,
 		&-checkbox &-input-checkbox:disabled~&-checkbox-target {
-			box-shadow    : none;
+			opacity: .5;
+			box-shadow: none;
 			pointer-events: none;
-			opacity       : .5;
 		}
 	}
 }
@@ -329,61 +261,61 @@
 }
 
 .range {
-	cursor  : pointer;
 	position: relative;
+	cursor: pointer;
 
 
 	&-inner {
-		// padding: 20px;
-		// margin : -20px;
-		padding-top   : 12px;
-		padding-bottom: 12px;
-		position      : relative;
+		position: relative;
 
 		position: absolute;
-		left    : 1px;
-		width   : calc(100% - 2px);
-		top     : -12px;
+		top: -12px;
+		left: 1px;
+		width: calc(100% - 2px);
+		// padding: 20px;
+		// margin : -20px;
+		padding-top: 12px;
+		padding-bottom: 12px;
 	}
 
 	&-btn {
-		display      : flex;
-		background   : var(--field-color);
-		border       : 3px solid var(--bg3);
-		box-shadow   : 0px 1px 1px rgba(0, 0, 0, 0.24);
-		position     : absolute;
-		width        : 22px;
-		height       : 22px;
-		border-radius: 50%;
+		display: flex;
+		position: absolute;
+		top: calc(50% - 11px);
 
-		left          : 0;
-		top           : calc(50% - 11px);
-		transform     : translateX(-50%);
+		left: 0;
+		width: 22px;
+		height: 22px;
+		transform: translateX(-50%);
+		transition: .1s;
+		background: var(--field-color);
+		border: 3px solid var(--bg3);
+		border-radius: 50%;
+		box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.24);
 		pointer-events: none;
-		transition    : .1s;
 	}
 
 	&-line {
-		height       : 5px;
-		background   : var(--bg2);
+		height: 5px;
+		background: var(--bg2);
 		border-radius: 0px 0px var(--radius) var(--radius);
 	}
 
 	&-progress {
-		position      : absolute;
-		left          : 0;
-		top           : 12px;
-		height        : 5px;
-		background    : var(--field-color);
-		border-radius : 0px 0px var(--radius) var(--radius);
+		position: absolute;
+		top: 12px;
+		left: 0;
+		height: 5px;
+		transition: .1s;
+		background: var(--field-color);
+		border-radius: 0px 0px var(--radius) var(--radius);
 		pointer-events: none;
-		transition    : .1s;
 	}
 }
 
 .form-range {
 	position: absolute;
-	left    : -1px;
-	bottom  : 5px;
-	width   : calc(100% + 2px);
+	bottom: 5px;
+	left: -1px;
+	width: calc(100% + 2px);
 }

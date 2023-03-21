@@ -26,18 +26,6 @@ section {
 }
 
 
-@screen xs {
-  :root {
-    --section-width: calc(theme(screens.xs) - 29.98px);
-  }
-}
-
-@screen sm {
-  :root {
-    --section-width: calc(theme(screens.sm) - 29.98px);
-  }
-}
-
 @screen md {
   :root {
     --section-width: calc(theme(screens.md) - 29.98px);
