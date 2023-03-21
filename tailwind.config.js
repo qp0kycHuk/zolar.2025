@@ -1,3 +1,5 @@
+
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{html,js}"],
@@ -34,6 +36,11 @@ module.exports = {
       white: '#fff',
       black: '#000'
     },
+    
   },
-  plugins: [],
+  plugins: [
+    require('./tailwind.button.js')
+  ],
 }
+
+

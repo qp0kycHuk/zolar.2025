@@ -33,6 +33,6 @@ function loadHandler() {
 
 	ripple.attach('.btn')
 	ripple.attach('.waved')
-	ripple.deAttach('.btn--link')
+	ripple.deAttach('.btn-text')
 
 }
