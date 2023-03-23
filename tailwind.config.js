@@ -40,8 +40,8 @@ module.exports = {
   },
   plugins: [
     require('@qpokychuk/tailwind-button-plugin'),
+    require('@qpokychuk/tailwind-image-ratio-plugin'),
     require('./tailwind.form.js'),
-    require('./tailwind.image.js'),
   ],
 }
 
