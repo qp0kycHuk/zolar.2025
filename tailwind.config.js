@@ -39,8 +39,9 @@ module.exports = {
     
   },
   plugins: [
-    require('./tailwind.button.js'),
+    require('@qpokychuk/tailwind-button-plugin'),
     require('./tailwind.form.js'),
+    require('./tailwind.image.js'),
   ],
 }
 
