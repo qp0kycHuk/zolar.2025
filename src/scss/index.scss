@@ -8,9 +8,8 @@
     @import 'swiper/css';
 }
 
-@import '../ui/ui-reset.scss';
-@import '../ui/ui-core.scss';
+@import '@qpokychuk/fonts/roboto/index.css';
 
+@import '../ui/ui-core.scss';
 @import '../ui/ui-example.scss';
-@import '../scss/frontend--fonts.scss';
 @import '../scss/frontend--style.scss';

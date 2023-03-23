@@ -4,11 +4,6 @@
     width    : var(--section-width);
     max-width: 100%;
 
-    @media (max-width:$sm) {
-      width: 100%;
-    }
-
-    @media(max-width:$md) {}
   }
 
   &-small {
@@ -19,10 +14,6 @@
   &-middle {
     width    : 620px;
     max-width: 100%;
-
-    @media (max-width:$sm) {
-      width: 100%;
-    }
 
   }
 }
