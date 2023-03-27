@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-    @import 'npm-kit-ripple/index.css';
+    @import '@qpokychuk/ripple/index.css';
     @import "@fancyapps/ui/dist/fancybox.css";
     @import 'swiper/css';
 }

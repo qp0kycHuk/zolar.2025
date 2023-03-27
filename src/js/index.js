@@ -7,7 +7,7 @@ import ymaps from "./ymaps";
 import scrollTo from "./scrollTo";
 import tab from 'npm-kit-tab';
 import toggle from 'npm-kit-toggle';
-import ripple from 'npm-kit-ripple';
+import ripple from '@qpokychuk/ripple';
 import Swiper, { Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs, EffectFade, Lazy } from 'swiper';
 
 
