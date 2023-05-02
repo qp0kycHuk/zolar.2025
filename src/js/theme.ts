@@ -1,7 +1,6 @@
-import getCookie from "./functions/getCookie";
+import Cookies from 'js-cookie'
 
-
-const themes = {
+const themes: Record<string, ITheme> = {
   clear: {
     key: '1',
     name: 'default'
@@ -11,8 +10,9 @@ const themes = {
     name: 'dark'
   }
 }
-let activeTheme;
 
+let activeTheme: ITheme;
+const COOKIE_THEME_NAME = 'activeThemeJson'
 
 const init = () => {
   document.addEventListener('keyup', keyupHandler);
@@ -27,7 +27,7 @@ const destroy = () => {
 
 
 
-function keyupHandler(event) {
+function keyupHandler(event: KeyboardEvent) {
   for (const i in themes) {
     if (!themes.hasOwnProperty(i)) continue;
     if (event.key == themes[i].key && event.altKey) {
@@ -39,16 +39,18 @@ function keyupHandler(event) {
 
 function saveTheme() {
   const activeThemeJson = JSON.stringify(activeTheme);
-  document.cookie = 'activeThemeJson=' + activeThemeJson + '; path=/; expires=Tue, 19 Jan 2138 03:14:07 GMT'
+  Cookies.set(COOKIE_THEME_NAME, activeThemeJson, {
+    expires: new Date('3000-01-01')
+  })
 }
 
-function setTheme(theme) {
+function setTheme(theme: ITheme) {
   document.body.setAttribute('data-theme', theme.name);
   activeTheme = theme;
 }
 
 function initTheme() {
-  const activeThemeJson = getCookie('activeThemeJson');
+  const activeThemeJson = Cookies.get(COOKIE_THEME_NAME);
   if (!activeThemeJson) {
     setTheme(themes.clear);
     return;
@@ -61,7 +63,9 @@ function initTheme() {
   }
 }
 
-
-
+interface ITheme {
+  key: string
+  name: string
+}
 
 export default { init, destroy }

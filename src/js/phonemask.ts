@@ -1,11 +1,11 @@
 const phoneRegexp = /(7|8)?(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/
 const phoneCompleteRegexp = /(7|8)\d{10}$/
 
-export function getUnmaskedValue(value) {
+export function getUnmaskedValue(value: string) {
     return value.replace(/\D/g, '')
 }
 
-export function getMaskedValue(value) {
+export function getMaskedValue(value: string) {
     const numberValue = value.toString().replace(/\D/g, '')
 
     if (!numberValue) {
@@ -26,21 +26,22 @@ export function getMaskedValue(value) {
     return maskedValue
 }
 
-export function isComplete(value) {
+export function isComplete(value: string) {
     const numberValue = value.replace(/\D/g, '')
     return phoneCompleteRegexp.test(numberValue)
 }
 
 
-function init(selector) {
+function init(selector: string) {
     document.addEventListener('input', (event) => {
-        if (!event.target.matches(selector)) return
-        const maskedValue = getMaskedValue(event.target.value)
-        event.target.value = maskedValue
+        const target = event.target as HTMLInputElement
+        if (!target.matches(selector)) return
+        const maskedValue = getMaskedValue(target.value)
+        target.value = maskedValue
 
-        event.target.addEventListener('blur', (event) => {
-            if (!isComplete(event.target.value)) {
-                event.target.value = ''
+        target.addEventListener('blur', (event) => {
+            if (!isComplete(target.value)) {
+                target.value = ''
             }
         }, { once: true })
     })

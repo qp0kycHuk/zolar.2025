@@ -4,12 +4,11 @@
 
 @layer base {
     @import '@qpokychuk/ripple/index.css';
-    @import "@fancyapps/ui/dist/fancybox.css";
+    @import "@fancyapps/ui/dist/fancybox/fancybox.css";
     @import 'swiper/css';
 }
 
-@import '@qpokychuk/fonts/roboto/index.css';
+@import '@qpokychuk/fonts/inter/index.css';
 
 @import '../ui/ui-core.scss';
-@import '../ui/ui-example.scss';
 @import '../scss/frontend--style.scss';

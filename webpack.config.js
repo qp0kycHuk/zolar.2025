@@ -42,12 +42,13 @@ function generateCopyPlugins(templateDir) {
 }
 
 module.exports = {
-  entry: './src/js/index.js',
+  entry: './src/js/index.ts',
   resolve: {
     alias: {
       '@src': path.resolve(__dirname, 'src/')
 
-    }
+    },
+    extensions: [".tsx", ".ts", ".js"],
   },
   output: {
     path: PUBLIC_PATH,
@@ -79,6 +80,16 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env']
+          }
+        }
+      },
+      {
+        test: /\.(ts|tsx)$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript']
           }
         }
       },

@@ -1,38 +1,40 @@
 import showPass from "./show-pass";
-import fancybox from "./fancybox";
-import rangeSlider from './range-slider';
 import theme from './theme';
 import phonemask from "./phonemask";
-import ymaps from "./ymaps";
 import scrollTo from "./scrollTo";
 import tab from 'npm-kit-tab';
 import toggle from 'npm-kit-toggle';
 import ripple from '@qpokychuk/ripple';
-import Swiper, { Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs, EffectFade, Lazy } from 'swiper';
+import Swiper, { Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs, EffectFade } from 'swiper';
+import { Fancybox } from "@fancyapps/ui";
 
 
 import '../scss/index.scss';
 
-Swiper.use([Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs, EffectFade, Lazy]);
+Swiper.use([Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs, EffectFade]);
 Swiper.defaults.touchStartPreventDefault = false
 window.Swiper = Swiper
-window.ripple = ripple
+
+interface CustomWindow extends Window {
+	Swiper: typeof Swiper
+}
+
+declare let window: CustomWindow;
+
 window.addEventListener('DOMContentLoaded', () => loadHandler())
 
 function loadHandler() {
-	fancybox.init()
 	showPass.init()
 	scrollTo.init()
-	rangeSlider.init()
 	tab.init()
 	toggle.init()
 	ripple.init()
 	theme.init()
-	ymaps.init()
 	phonemask.init('[type="tel"]')
 
 	ripple.attach('.btn')
 	ripple.attach('.waved')
 	ripple.deAttach('.btn-text')
 
+	Fancybox.bind("[data-fancybox]");
 }
