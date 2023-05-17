@@ -1,31 +1,12 @@
-
-
 :root {
 	--bg1: #E9EAEC;
 	--bg2: #F4F5F6;
-	--bg3: #FFFFFF;
+	--bg3: #fff;
+	--font-base: 'Roboto', arial, helvetica, sans-serif;
 
-	--spacing: 4px;
-
-	--radius-small: 4px;
-	--radius-middle: 8px;
-	--radius-large: 12px;
-
-	--font-base: 'Roboto', Arial, Helvetica, sans-serif;
-
-	--zi-l1: 321;
-	--zi-l2: 322;
-	--zi-l3: 323;
-	--zi-l4: 324;
-	--zi-l5: 325;
-	--zi-l6: 326;
-	--zi-l7: 327;
-	--zi-l8: 328;
-	--zi-l9: 329;
 }
 
 [data-theme="dark"] {
-
 	--bg1: #181818;
 	--bg2: #282828;
 	--bg3: #323232;
@@ -45,6 +26,9 @@ body {
 
 .active-enabled {
 	display: none !important;
+
+
+
 }
 
 .toggle-active,
@@ -56,5 +40,21 @@ body {
 
 	.active-enabled {
 		display: flex !important;
+	}
+}
+
+.card {
+	$a: 1;
+
+	display: inline;
+	margin-left: 10px;
+
+	@media (max-width:theme('screens.md')) {
+		display: flex;
+	}
+
+	&-title {
+		font-size: 20px;
+		font-weight: 600;
 	}
 }
