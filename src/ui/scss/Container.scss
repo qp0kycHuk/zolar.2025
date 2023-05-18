@@ -4,27 +4,23 @@
   --section-gap-bottom: 20px;
 }
 
-
 .container {
   width: 100%;
   max-width: var(--section-width);
   margin: 0 auto;
 }
 
-
-
 dialog,
 section,
 header,
 footer {
-  padding: 0px calc(50% - var(--section-width) / 2);
+  padding: 0 calc(50% - var(--section-width) / 2);
 }
 
 section {
   padding-top: var(--section-gap-top);
   padding-bottom: var(--section-gap-bottom);
 }
-
 
 @screen md {
   :root {

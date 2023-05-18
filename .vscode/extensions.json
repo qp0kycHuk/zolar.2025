@@ -5,6 +5,7 @@
         "bradlc.vscode-tailwindcss",
         "heybourn.headwind",
         "j69.ejs-beautify",
-        "mrmlnc.vscode-postcss-sorting"
+        "mrmlnc.vscode-postcss-sorting",
+        "usernamehw.errorlens"
     ]
 }

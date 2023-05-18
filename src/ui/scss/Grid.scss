@@ -1,4 +1,4 @@
-@mixin GridCol {
+@mixin grid-col {
 	&-1 {
 		width: calc(1 * 100% / 12);
 		min-width: calc(1 * 100% / 12);
@@ -65,7 +65,7 @@
 	}
 }
 
-@mixin GridSpasing {
+@mixin grid-spacing {
 	&-0 {
 		--gap: 0px;
 	}
@@ -114,6 +114,7 @@
 @layer components {
 	.row {
 		--gap: theme(spacing.3);
+		
 		display: flex;
 		flex-wrap: wrap;
 		width: calc(100% + var(--gap));
@@ -137,15 +138,15 @@
 		}
 
 		&-spacing {
-			@include GridSpasing;
+			@include grid-spacing();
 
 		}
 	}
 
 	.grid-col {
-		width: 100%;
+		@include grid-col();
 
-		@include GridCol;
+		width: 100%;
 
 	}
 }

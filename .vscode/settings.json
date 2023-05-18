@@ -2,6 +2,7 @@
     "css.validate": false,
     "less.validate": false,
     "scss.validate": false,
+    "stylelint.enable": true,
     "stylelint.validate": [
         "css",
         "scss"
@@ -18,11 +19,7 @@
             "declarations",
             {
                 "type": "rule",
-                "selector": "&::before"
-            },
-            {
-                "type": "rule",
-                "selector": "&::after"
+                "selector": "/^&:is/"
             },
             {
                 "type": "rule",
@@ -64,6 +61,14 @@
                 "type": "rule",
                 "selector": "&\\[[^\\[\\]]+\\]"
             },
+            {
+                "type": "rule",
+                "selector": "&::before"
+            },
+            {
+                "type": "rule",
+                "selector": "&::after"
+            },
             "at-rules",
             "rules",
             {
@@ -87,7 +92,6 @@
         "properties-order": [
             "content",
             "box-sizing",
-            // display
             "display",
             "align-content",
             "align-items",
@@ -129,14 +133,12 @@
             "column-span",
             "column-count",
             "column-width",
-            // position
             "position",
             "inset",
             "top",
             "right",
             "bottom",
             "left",
-            // size
             "width",
             "min-width",
             "max-width",
@@ -156,22 +158,6 @@
             "padding-right",
             "padding-bottom",
             "padding-left",
-            "visibility",
-            "opacity",
-            // transforms
-            "transform",
-            "transform-origin",
-            "transform-style",
-            "backface-visibility",
-            "perspective",
-            "perspective-origin",
-            // transition
-            "transition",
-            "transition-delay",
-            "transition-duration",
-            "transition-property",
-            "transition-timing-function",
-            // background
             "background",
             "background-attachment",
             "background-clip",
@@ -181,7 +167,6 @@
             "background-position",
             "background-size",
             "backdrop-filter",
-            // border
             "border",
             "border-top",
             "border-right",
@@ -214,13 +199,11 @@
             "border-image-repeat",
             "border-image-slice",
             "box-shadow",
-            // outline
             "outline",
             "outline-offset",
             "outline-width",
             "outline-style",
             "outline-color",
-            // font
             "font",
             "font-family",
             "font-size",
@@ -251,7 +234,19 @@
             "word-break",
             "word-wrap",
             "cursor",
-            // animation
+            "visibility",
+            "opacity",
+            "transform",
+            "transform-origin",
+            "transform-style",
+            "backface-visibility",
+            "perspective",
+            "perspective-origin",
+            "transition",
+            "transition-delay",
+            "transition-duration",
+            "transition-property",
+            "transition-timing-function",
             "animation",
             "animation-name",
             "animation-duration",
@@ -261,6 +256,7 @@
             "animation-direction",
             "animation-fill-mode",
             "animation-play-state",
+            "z-index",
             "resize",
             "list-style",
             "list-style-type",
@@ -281,8 +277,7 @@
             "page-break-after",
             "page-break-inside",
             "float",
-            "clear",
-            "z-index",
+            "clear"
         ]
     },
     "[scss]": {
