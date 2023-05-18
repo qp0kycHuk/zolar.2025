@@ -1,60 +1,58 @@
 :root {
-	--bg1: #E9EAEC;
-	--bg2: #F4F5F6;
-	--bg3: #fff;
-	--font-base: 'Roboto', arial, helvetica, sans-serif;
+    --bg1: #E9EAEC;
+    --bg2: #F4F5F6;
+    --bg3: #fff;
+    --font-base: 'Roboto', arial, helvetica, sans-serif;
 
 }
 
 [data-theme="dark"] {
-	--bg1: #181818;
-	--bg2: #282828;
-	--bg3: #323232;
+    --bg1: #181818;
+    --bg2: #282828;
+    --bg3: #323232;
 }
 
 body {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-	background: var(--bg1);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--bg1);
 
-	* {
-		font-family: var(--font-base);
-	}
+    * {
+        font-family: var(--font-base);
+    }
 
 }
 
 .active-enabled {
-	display: none !important;
-
-
+    display: none !important;
 
 }
 
 .toggle-active,
 .tab-active,
 .active {
-	.active-disabled {
-		display: none !important;
-	}
+    .active-disabled {
+        display: none !important;
+    }
 
-	.active-enabled {
-		display: flex !important;
-	}
+    .active-enabled {
+        display: flex !important;
+    }
 }
 
 .card {
-	$a: 1;
+    $a: 1;
 
-	display: inline;
-	margin-left: 10px;
+    display: inline;
+    margin-left: 10px;
 
-	@media (max-width:theme('screens.md')) {
-		display: flex;
-	}
+    @media (max-width:theme('screens.md')) {
+        display: flex;
+    }
 
-	&-title {
-		font-size: 20px;
-		font-weight: 600;
-	}
+    &-title {
+        font-size: 20px;
+        font-weight: 600;
+    }
 }

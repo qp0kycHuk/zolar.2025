@@ -7,6 +7,7 @@
         "j69.ejs-beautify",
         "mrmlnc.vscode-postcss-sorting",
         "usernamehw.errorlens",
-        "dbaeumer.vscode-eslint"
+        "dbaeumer.vscode-eslint",
+        "rvest.vs-code-prettier-eslint"
     ]
 }

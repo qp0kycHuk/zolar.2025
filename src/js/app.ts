@@ -1,18 +1,19 @@
-// import { createApp } from "vue"
+import { createApp } from 'vue'
 
-function init() {
-    // const app = createApp({
-    //     data() {
-    //         return {
-    //         }
-    //     },
-    //     provide: {
-    //     }
-    // })
-    // const rootElement = document.getElementById('root')
-    // if (rootElement) {
-    //     app.mount(rootElement)
-    // }
+window.addEventListener('DOMContentLoaded', loadHandler)
+
+function loadHandler() {
+    const rootElement = document.getElementById('root')
+    const app = createApp({
+        data() {
+            return {
+                exampleTitle: process.env.EXAMPLE_ENV_VARIABLE,
+            }
+        },
+        provide: {},
+    })
+
+    if (rootElement) {
+        app.mount(rootElement)
+    }
 }
-
-export default { init }

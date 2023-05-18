@@ -4,6 +4,9 @@ const CopyPlugin = require('copy-webpack-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const path = require('path')
 const fs = require('fs')
+const webpack = require('webpack')
+const { VueLoaderPlugin } = require('vue-loader')
+const Dotenv = require('dotenv-webpack')
 
 const PUBLIC_PATH = path.resolve(__dirname, 'dist')
 
@@ -12,55 +15,21 @@ const htmlWebpackPluginDefaults = {
     inject: 'head',
 }
 
-function generateHtmlPlugins(templateDir) {
-    const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir))
-
-
-    return templateFiles
-        .map((item) => {
-            const parts = item.split('.')
-            const name = parts[0]
-            const extension = parts[1]
-
-            if (extension !== 'html') return null
-
-            return new HtmlWebpackPlugin({
-                ...htmlWebpackPluginDefaults,
-                filename: `${name}.html`,
-                template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
-            })
-        })
-        .filter((item) => item !== null)
-}
-
-function generateCopyPlugins(templateDir) {
-    const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir))
-
-
-    return templateFiles
-        .map((item) => {
-            const parts = item.split('.')
-            const name = parts[0]
-            const extension = parts[1]
-
-            if (extension !== 'html') return null
-
-            return { from: `${templateDir}/${name}.${extension}`, to: `./${name}.${extension}` }
-        })
-        .filter((item) => item !== null)
-}
-
 module.exports = {
-    entry: './src/js/index.ts',
+    entry: {
+        index: './src/js/index.ts',
+        app: './src/js/app.ts',
+    },
     resolve: {
         alias: {
             '@src': path.resolve(__dirname, 'src/'),
+            vue: 'vue/dist/vue.esm-bundler.js',
         },
-        extensions: ['.tsx', '.ts', '.js'],
+        extensions: ['.tsx', '.ts', '.js', 'vue'],
     },
     output: {
         path: PUBLIC_PATH,
-        filename: 'js/index.js',
+        filename: 'js/[name].js',
     },
     devtool: 'source-map',
     module: {
@@ -102,6 +71,23 @@ module.exports = {
                 },
             },
             {
+                test: /\.tsx?$/,
+                loader: 'ts-loader',
+                options: {
+                    appendTsSuffixTo: [/\.vue$/],
+                },
+            },
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader',
+                options: {
+                    loaders: {
+                        ts: 'ts-loader',
+                    },
+                    esModule: true,
+                },
+            },
+            {
                 test: /\.html$/,
                 include: path.resolve(__dirname, 'src/html-includes'),
                 use: ['raw-loader'],
@@ -109,6 +95,12 @@ module.exports = {
         ],
     },
     plugins: [
+        new VueLoaderPlugin(),
+        new webpack.DefinePlugin({
+            __VUE_OPTIONS_API__: true,
+            __VUE_PROD_DEVTOOLS__: false,
+        }),
+        new Dotenv(),
         new MiniCssExtractPlugin({ filename: 'css/style.css' }),
         ...generateHtmlPlugins('./src'),
         new CopyPlugin({
@@ -130,4 +122,40 @@ module.exports = {
         port: 9000,
         historyApiFallback: true,
     },
+}
+
+function generateHtmlPlugins(templateDir) {
+    const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir))
+
+    return templateFiles
+        .map((item) => {
+            const parts = item.split('.')
+            const name = parts[0]
+            const extension = parts[1]
+
+            if (extension !== 'html') return null
+
+            return new HtmlWebpackPlugin({
+                ...htmlWebpackPluginDefaults,
+                filename: `${name}.html`,
+                template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
+            })
+        })
+        .filter((item) => item !== null)
+}
+
+function generateCopyPlugins(templateDir) {
+    const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir))
+
+    return templateFiles
+        .map((item) => {
+            const parts = item.split('.')
+            const name = parts[0]
+            const extension = parts[1]
+
+            if (extension !== 'html') return null
+
+            return { from: `${templateDir}/${name}.${extension}`, to: `./${name}.${extension}` }
+        })
+        .filter((item) => item !== null)
 }
