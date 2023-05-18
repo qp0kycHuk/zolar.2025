@@ -1,6 +1,19 @@
+const elementsSizes = {
+    xs: '24px',
+    sm: '32px',
+    base: '50px',
+    lg: '60px',
+    xl: '72px',
+}
+
+const headingStyles = {
+    fontWeight: '500',
+}
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ['./src/**/*.{html,js}'],
+    content: ['./src/**/*.{html,js,vue}'],
+    darkMode: 'class',
     theme: {
         screens: {
             xs: 420 + 29.98 + 'px',
@@ -35,8 +48,32 @@ module.exports = {
             black: '#000',
         },
         zIndex: [0, 321, 322, 323, 324, 325, 326, 327, 328, 329, 'auto'],
+        extend: {
+            inputSize: elementsSizes,
+            btnSize: elementsSizes,
+            backgroundColor: {
+                l1: 'var(--bg1)',
+                l2: 'var(--bg2)',
+                l3: 'var(--bg3)',
+            },
+            typography: {
+                DEFAULT: {
+                    css: {
+                        h1: headingStyles,
+                        h2: headingStyles,
+                        h3: headingStyles,
+                        h4: headingStyles,
+                        h5: headingStyles,
+                        h6: headingStyles,
+                        b: headingStyles,
+                        strong: headingStyles,
+                    },
+                },
+            },
+        },
     },
     plugins: [
+        require('@tailwindcss/typography'),
         require('@qpokychuk/tailwind-button-plugin'),
         require('@qpokychuk/tailwind-image-ratio-plugin'),
         require('./tailwind.form.js'),
