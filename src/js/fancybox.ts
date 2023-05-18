@@ -1,4 +1,4 @@
-import { Fancybox } from "@fancyapps/ui";
+import { Fancybox } from '@fancyapps/ui'
 
 function init() {
     window.Fancybox = Fancybox
@@ -6,12 +6,12 @@ function init() {
         dragToClose: false,
         mainClass: 'fancybox-custom-modal',
 
-        defaultType: 'ajax'
+        defaultType: 'ajax',
     }
 
-    Fancybox.bind("[data-fancybox]");
+    Fancybox.bind('[data-fancybox]')
     // @ts-ignore
-    Fancybox.bind("[data-fancybox-modal]", options);
+    Fancybox.bind('[data-fancybox-modal]', options)
 
     // @ts-ignore
     Fancybox.modal = {}
@@ -23,9 +23,9 @@ function init() {
 }
 
 interface CustomWindow extends Window {
-    Fancybox: typeof Fancybox,
+    Fancybox: typeof Fancybox
 }
 
-declare let window: CustomWindow;
+declare let window: CustomWindow
 
 export default { init }

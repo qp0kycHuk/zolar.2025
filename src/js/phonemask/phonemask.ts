@@ -2,19 +2,23 @@ import by from './lang/by'
 import ru from './lang/ru'
 
 function init(selector: string) {
-    const country = by
+    const country = ru
 
     document.addEventListener('input', (event) => {
         const target = event.target as HTMLInputElement
+
         if (!target.matches(selector)) return
         const maskedValue = country.getMaskedValue(target.value)
+
         target.value = maskedValue
 
-        target.addEventListener('blur', (event) => {
+        const blurHandler = () => {
             if (!country.isComplete(target.value)) {
                 target.value = ''
             }
-        }, { once: true })
+        }
+
+        target.addEventListener('blur', blurHandler, { once: true })
     })
 }
 

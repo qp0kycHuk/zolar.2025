@@ -12,9 +12,8 @@ export function getMaskedValue(value: string) {
 
     if (!numberValue) return ''
 
-    const matchValue = numberValue.match(phoneRegexp);
-    const matchCode = numberValue.match(phoneCodeRegexp);
-    console.log(matchCode);
+    const matchValue = numberValue.match(phoneRegexp)
+    const matchCode = numberValue.match(phoneCodeRegexp)
 
     if (!matchValue || !matchCode) return ''
 
@@ -30,14 +29,13 @@ export function getMaskedValue(value: string) {
         code = phoneCode
     }
 
-    console.log(code);
+    const a = matchValue[2]
+    const b = matchValue[3]
+    const c = matchValue[4]
+    const d = matchValue[5]
 
-    const a = matchValue[2];
-    const b = matchValue[3];
-    const c = matchValue[4];
-    const d = matchValue[5];
     // +375 - aa - bbb - cc - dd
-    const maskedValue = `+375 ${a ? `${a}` : ''}${b ? ` ${b}` : ''}${c ? ` - ${c}` : ''}${d ? ` - ${d}` : ''}`;
+    const maskedValue = `+375 ${a ? `${a}` : ''}${b ? ` ${b}` : ''}${c ? ` - ${c}` : ''}${d ? ` - ${d}` : ''}`
 
     // return maskedValue
     return maskedValue
@@ -45,9 +43,9 @@ export function getMaskedValue(value: string) {
 
 export function isComplete(value: string) {
     const numberValue = value.replace(/\D/g, '')
+
     return phoneCompleteRegexp.test(numberValue)
 }
-
 
 export default {
     getUnmaskedValue,

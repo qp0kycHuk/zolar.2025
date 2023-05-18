@@ -10,25 +10,25 @@ export function getMaskedValue(value: string) {
 
     if (!numberValue) return ''
 
-    const matchValue = numberValue.match(phoneRegexp);
+    const matchValue = numberValue.match(phoneRegexp)
 
     if (!matchValue) return ''
 
-    const a = matchValue[2];
-    const b = matchValue[3];
-    const c = matchValue[4];
-    const d = matchValue[5];
+    const a = matchValue[2]
+    const b = matchValue[3]
+    const c = matchValue[4]
+    const d = matchValue[5]
     // +7 (aaa) bbb - cc - dd
-    const maskedValue = `+7${a ? ` (${a}` : ''}${b ? `) ${b}` : ''}${c ? ` - ${c}` : ''}${d ? ` - ${d}` : ''}`;
+    const maskedValue = `+7${a ? ` (${a}` : ''}${b ? `) ${b}` : ''}${c ? ` - ${c}` : ''}${d ? ` - ${d}` : ''}`
 
     return maskedValue
 }
 
 export function isComplete(value: string) {
     const numberValue = value.replace(/\D/g, '')
+
     return phoneCompleteRegexp.test(numberValue)
 }
-
 
 export default {
     getUnmaskedValue,

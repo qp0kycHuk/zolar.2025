@@ -6,6 +6,7 @@
         "heybourn.headwind",
         "j69.ejs-beautify",
         "mrmlnc.vscode-postcss-sorting",
-        "usernamehw.errorlens"
+        "usernamehw.errorlens",
+        "dbaeumer.vscode-eslint"
     ]
 }
