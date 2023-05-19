@@ -1,5 +1,4 @@
 import { Fancybox } from '@fancyapps/ui'
-import { OptionsType } from '@fancyapps/ui/types/Fancybox/options'
 
 function init() {
     window.Fancybox = Fancybox
