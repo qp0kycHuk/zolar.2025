@@ -1,11 +1,11 @@
 import { Fancybox } from '@fancyapps/ui'
+import { OptionsType } from '@fancyapps/ui/types/Fancybox/options'
 
 function init() {
     window.Fancybox = Fancybox
     const options = {
         dragToClose: false,
         mainClass: 'fancybox-custom-modal',
-
         defaultType: 'ajax',
     }
 
@@ -15,6 +15,7 @@ function init() {
 
     // @ts-ignore
     Fancybox.modal = {}
+
     // @ts-ignore
     Fancybox.modal.open = (src) => {
         // @ts-ignore
