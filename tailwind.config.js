@@ -76,6 +76,7 @@ module.exports = {
         require('@tailwindcss/typography'),
         require('@qpokychuk/tailwind-button-plugin'),
         require('@qpokychuk/tailwind-image-ratio-plugin'),
+        require('tailwindcss-interaction-media'),
         require('./tailwind.form.js'),
     ],
 }
