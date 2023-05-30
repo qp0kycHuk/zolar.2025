@@ -1,5 +1,5 @@
 .grid.swiper .swiper-wrapper {
-  flex-wrap      : nowrap;
+  flex-wrap: nowrap;
 
 }
 
@@ -7,11 +7,11 @@
   user-select: none;
 }
 
-img.swiper-lazy{
+img.swiper-lazy {
   transition: .2s ease;
 }
 
-img.swiper-lazy:not(.swiper-lazy-loaded){
+img.swiper-lazy:not(.swiper-lazy-loaded) {
   opacity: 0;
 }
 

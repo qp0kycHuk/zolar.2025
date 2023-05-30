@@ -1,28 +1,27 @@
-
 .tab {
-	&-content-cover {
-		position: relative;
-	}
+  &-content-cover {
+    position: relative;
+  }
 
-	&-content {
-		padding-top: 1px;
-		transition : .3s ease .2s;
+  &-content {
+    padding-top: 1px;
+    transition : .3s ease .2s;
 
-		&-inner {
-			position: relative;
-		}
+    &-inner {
+      position: relative;
+    }
 
-		&:not(.tab-active) {
-			position      : absolute;
-			top           : 0;
-			left          : 0;
-			width         : 100%;
-			max-height    : 100%;
-			overflow      : hidden;
-			opacity       : 0;
-			transform     : translateY(10px);
-			transition    : .3s ease;
-			pointer-events: none;
-		}
-	}
+    &:not(.tab-active) {
+      position      : absolute;
+      top           : 0;
+      left          : 0;
+      width         : 100%;
+      max-height    : 100%;
+      overflow      : hidden;
+      opacity       : 0;
+      transform     : translateY(10px);
+      transition    : .3s ease;
+      pointer-events: none;
+    }
+  }
 }

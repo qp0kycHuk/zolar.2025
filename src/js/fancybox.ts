@@ -1,29 +1,29 @@
 import { Fancybox } from '@fancyapps/ui'
 
 function init() {
-    window.Fancybox = Fancybox
-    const options = {
-        dragToClose: false,
-        mainClass: 'fancybox-custom-modal',
-        defaultType: 'ajax',
-    }
+  window.Fancybox = Fancybox
+  const options = {
+    dragToClose: false,
+    mainClass: 'fancybox-custom-modal',
+    defaultType: 'ajax',
+  }
 
-    Fancybox.bind('[data-fancybox]')
-    // @ts-ignore
-    Fancybox.bind('[data-fancybox-modal]', options)
+  Fancybox.bind('[data-fancybox]')
+  // @ts-ignore
+  Fancybox.bind('[data-fancybox-modal]', options)
 
-    // @ts-ignore
-    Fancybox.modal = {}
+  // @ts-ignore
+  Fancybox.modal = {}
 
+  // @ts-ignore
+  Fancybox.modal.open = (src) => {
     // @ts-ignore
-    Fancybox.modal.open = (src) => {
-        // @ts-ignore
-        Fancybox.show([{ src, ...options }], options)
-    }
+    Fancybox.show([{ src, ...options }], options)
+  }
 }
 
 interface CustomWindow extends Window {
-    Fancybox: typeof Fancybox
+  Fancybox: typeof Fancybox
 }
 
 declare let window: CustomWindow

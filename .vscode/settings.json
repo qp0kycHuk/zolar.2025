@@ -281,10 +281,10 @@
         ]
     },
     "[scss]": {
-        "editor.defaultFormatter": "vscode.css-language-features"
+        "editor.defaultFormatter": "MikeBovenlander.formate"
     },
     "[css]": {
-        "editor.defaultFormatter": "vscode.css-language-features"
+        "editor.defaultFormatter": "MikeBovenlander.formate"
     },
     "files.exclude": {
         ".vscode": true,
@@ -301,7 +301,7 @@
     "editor.detectIndentation": false,
     "editor.insertSpaces": true,
     "editor.indentSize": "tabSize",
-    "editor.tabSize": 4,
+    "editor.tabSize": 2,
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
     "editor.formatOnPaste": false, // required 
     "editor.formatOnType": false, // required
