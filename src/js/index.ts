@@ -1,5 +1,6 @@
 import showPass from './show-pass'
 import theme from './theme'
+import fancybox from './fancybox'
 import phonemask from './phonemask/phonemask'
 import scrollTo from './scrollTo'
 import tab from 'npm-kit-tab'
@@ -28,6 +29,7 @@ function loadHandler() {
   toggle.init()
   ripple.init()
   theme.init()
+  fancybox.init()
   phonemask.init('[type="tel"]')
 
   ripple.attach('.btn')
