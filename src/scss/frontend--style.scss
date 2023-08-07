@@ -24,35 +24,20 @@ body {
 
 }
 
-.active-enabled {
-  display: none !important;
-
-}
-
-.toggle-active,
-.tab-active,
-.active {
-  .active-disabled {
+@layer components {
+  .active-enabled:not(:is(:is(.toggle-active, .tab-active, .active) .active-enabled)) {
     display: none !important;
   }
-
-  .active-enabled {
-    display: flex !important;
+  
+  .active-disabled:is(:is(.toggle-active, .tab-active, .active) .active-disabled) {
+    display: none !important;
   }
-}
-
-.card {
-  $a: 1;
-
-  display    : inline;
-  margin-left: 10px;
-
-  @media (max-width:theme('screens.md')) {
-    display: flex;
+  
+  .is-active-disabled:is(.toggle-active, .active) {
+    display: none;
   }
-
-  &-title {
-    font-size  : 20px;
-    font-weight: 600;
+  
+  .is-active-enabled:not(:is(.toggle-active, .active)) {
+    display: none;
   }
 }
