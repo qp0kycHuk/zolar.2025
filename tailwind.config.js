@@ -12,7 +12,7 @@ const headingStyles = {
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{html,js,vue}'],
+  content: ['./src/**/*.{html,js,ts}'],
   darkMode: ['class', '[data-theme="dark"]'],
   theme: {
     screens: {
@@ -20,14 +20,14 @@ module.exports = {
       sm: 580 + 29.98 + 'px',
       md: 720 + 29.98 + 'px',
       lg: 1170 + 29.98 + 'px',
-      xl: 1270 + 29.98 + 'px',
+      xl: 1366 + 'px',
     },
     container: {
       xs: 420 + 'px',
       sm: 580 + 'px',
       md: 720 + 'px',
       lg: 1170 + 'px',
-      xl: 1366 + 'px',
+      xl: 1270 + 'px',
     },
     colors: {
       primary: '#b71540',
@@ -65,6 +65,6 @@ module.exports = {
   plugins: [
     require('@qpokychuk/tailwind-button-plugin'),
     require('@qpokychuk/tailwind-ratio-plugin'),
-    require('./tailwind.form.js'),
+    require('./tailwind.input.js')({}),
   ],
 }

@@ -6,19 +6,9 @@ import scrollTo from './scrollTo'
 import tab from 'npm-kit-tab'
 import toggle from 'npm-kit-toggle'
 import ripple from '@qpokychuk/ripple'
-import Swiper, { Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs, EffectFade } from 'swiper'
+import swiper from './swiper'
 
 import '../scss/index.scss'
-
-Swiper.use([Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs, EffectFade])
-Swiper.defaults.touchStartPreventDefault = false
-window.Swiper = Swiper
-
-interface CustomWindow extends Window {
-  Swiper: typeof Swiper
-}
-
-declare let window: CustomWindow
 
 window.addEventListener('DOMContentLoaded', () => loadHandler())
 
@@ -35,4 +25,6 @@ function loadHandler() {
   ripple.attach('.btn')
   ripple.attach('.waved')
   ripple.deAttach('.btn-text')
+
+  swiper.init()
 }

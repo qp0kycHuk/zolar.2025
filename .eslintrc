@@ -11,7 +11,7 @@
     "webpack.config.js",
     "tailwind.config.js",
     "postcss.config.js",
-    "tailwind.form.js",
+    "tailwind.input.js",
     "tailwind.button.js"
   ],
   "overrides": [],
