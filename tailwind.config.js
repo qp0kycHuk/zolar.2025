@@ -18,16 +18,16 @@ module.exports = {
     screens: {
       xs: 420 + 29.98 + 'px',
       sm: 580 + 29.98 + 'px',
-      md: 720 + 29.98 + 'px',
+      md: 740 + 29.98 + 'px',
       lg: 1170 + 29.98 + 'px',
       xl: 1366 + 'px',
     },
     container: {
       xs: 420 + 'px',
       sm: 580 + 'px',
-      md: 720 + 'px',
+      md: 740 + 'px',
       lg: 1170 + 'px',
-      xl: 1270 + 'px',
+      xl: 1230 + 'px',
     },
     colors: {
       primary: '#b71540',
@@ -38,7 +38,7 @@ module.exports = {
       yellow: '#f39c12',
       gray: '#333',
       white: '#fff',
-      black: '#000',
+      black: '#302B44',
     },
     fontFamily: {
       base: 'var(--font-base)',

@@ -9,9 +9,216 @@
 </head>
 
 <body>
-  <header class="header"></header>
-  <section class="started"></section>
-  <footer class="footer"></footer>
+  <section class="started">
+    <div class="started-snowflakes">
+      <%= _.template(require('./html-includes/started-snowflakes.html').default)() %>
+    </div>
+    <div class="started-gifts">
+      <img src="img/started-gifts.svg" alt="">
+    </div>
+    <div class="started-snowman">
+      <%= _.template(require('./html-includes/snowman.html').default)() %>
+    </div>
+    <div class="started-gnomes">
+      <%= _.template(require('./html-includes/gnomes.html').default)() %>
+    </div>
+
+
+    <div class="started-cloud started-cloud-top">
+      <img src="img/started-cloud-top.svg" alt="">
+    </div>
+    <div class="started-cloud started-cloud-bottom started-cloud-bottom-1">
+      <img src="img/started-cloud-bottom-1.svg" alt="">
+    </div>
+    <div class="started-cloud started-cloud-bottom started-cloud-bottom-2">
+      <img src="img/started-cloud-bottom-2.svg" alt="">
+    </div>
+    <div class="started-cloud started-cloud-bottom started-cloud-bottom-3">
+      <img src="img/started-cloud-bottom-3.svg" alt="">
+    </div>
+    <div class="started-cloud started-cloud-bottom started-cloud-bottom-4">
+      <img src="img/started-cloud-bottom-4.svg" alt="">
+    </div>
+
+    <div class="started-logo">
+      <img src="img/started-logo.svg" alt="">
+    </div>
+    <div class="started-subtitle subtitle">- Ну что, пора?</div>
+    <div class="started-title title">
+      - Пока нет, до Нового Года еще:
+    </div>
+    <div class="started-timer timer">
+      <div class="timer-item">
+        <div class="timer-item-num">
+          <div class="timer-item-background">
+            <img src="img/timer-item-bg.svg" alt="">
+          </div>
+          <div class="timer-item-value" id="days">33</div>
+        </div>
+        <div class="sm:mt-4 text-center">
+          <div class="xl:text-xl max-sm:text-sm line-through" id="days-text">дней</div>
+          <div class="xl:text-xl max-sm:text-sm sm:mt-0.5 opacity-50" id="days-alt">проектов</div>
+        </div>
+      </div>
+      <div class="timer-item">
+        <div class="timer-item-num">
+          <div class="timer-item-background">
+            <img src="img/timer-item-bg.svg" alt="">
+          </div>
+          <div class="timer-item-value" id="hours">33</div>
+        </div>
+        <div class="sm:mt-4 text-center">
+          <div class="xl:text-xl max-sm:text-sm line-through" id="hours-text">часов</div>
+          <div class="xl:text-xl max-sm:text-sm sm:mt-0.5 opacity-50" id="hours-alt">созвонов</div>
+        </div>
+      </div>
+      <div class="timer-item">
+        <div class="timer-item-num">
+          <div class="timer-item-background">
+            <img src="img/timer-item-bg.svg" alt="">
+          </div>
+          <div class="timer-item-value" id="minutes">33</div>
+        </div>
+        <div class="sm:mt-4 text-center">
+          <div class="xl:text-xl max-sm:text-sm line-through" id="minutes-text">минут</div>
+          <div class="xl:text-xl max-sm:text-sm sm:mt-0.5 opacity-50" id="minutes-alt">чашек кофе</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="recommendation">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-6 gap-8">
+      <div class="recommendation-item lg:col-span-2">
+        <div class="recommendation-item-img h-72 relative">
+          <img src="img/recommendation/1.jpg" alt="" class="absolute-fit object-cover">
+        </div>
+        <div class="recommendation-item-content">
+          <div class="lg:text-2xl font-bold">Отпустите</div>
+          <div class="font-alt text-4xl lg:text-5xl font-medium -mt-2">ситуацию</div>
+          <div class="leading-normal mt-7 max-lg:text-sm">
+            Не успеваете закрыть дедлайны?
+            Убраться в спальне? Купить подарок?
+            Забейте! Новый год - это праздник,
+            а не голодные игры. Кайфуйте!
+          </div>
+        </div>
+      </div>
+      <div class="recommendation-item lg:col-span-2">
+        <div class="recommendation-item-img h-72 relative">
+          <img src="img/recommendation/2.jpg" alt="" class="absolute-fit object-cover">
+        </div>
+        <div class="recommendation-item-content">
+          <div class="lg:text-2xl font-bold">Подумайте о своём</div>
+          <div class="font-alt text-4xl lg:text-5xl font-medium -mt-2">здоровье</div>
+          <div class="leading-normal mt-7 max-lg:text-sm">
+            Запланируйте дни под отдых
+            от нескончаемого праздника...
+            Чтобы потом снова нарушить свои
+            планы, как и в прошлом году
+          </div>
+        </div>
+      </div>
+      <div class="recommendation-item lg:col-span-2">
+        <div class="recommendation-item-img h-72 relative">
+          <img src="img/recommendation/3.jpg" alt="" class="absolute-fit object-cover">
+        </div>
+        <div class="recommendation-item-content">
+          <div class="lg:text-2xl font-bold">Коты ведь тоже</div>
+          <div class="font-alt text-4xl lg:text-5xl font-medium -mt-2">как люди</div>
+          <div class="leading-normal mt-7 max-lg:text-sm">
+            Купите побольше игрушек и повесьте
+            их пониже, чтобы ваш шерстяной тоже
+            смог в полной мере насладиться
+            атмосферой праздника
+          </div>
+        </div>
+      </div>
+      <div class="recommendation-item recommendation-item-lg lg:col-span-3">
+        <div class="recommendation-item-img h-72 relative">
+          <img src="img/recommendation/4.jpg" alt="" class="absolute-fit object-cover">
+        </div>
+        <div class="recommendation-item-content">
+          <div class="lg:text-2xl font-bold">Конечно, не забудьте</div>
+          <div class="font-alt text-4xl lg:text-5xl font-medium -mt-2">украсить дом!</div>
+          <div class="leading-normal mt-7 max-lg:text-sm">
+            Покупать игрушки в супермаркете это детский сад.
+            Сели и сделали что-то сами, независимо от того, оттуда
+            у вас растут руки или не оттуда!
+          </div>
+        </div>
+      </div>
+      <div class="recommendation-item recommendation-item-lg lg:col-span-3">
+        <div class="recommendation-item-img h-72 relative">
+          <img src="img/recommendation/5.jpg" alt="" class="absolute-fit object-cover">
+        </div>
+        <div class="recommendation-item-content">
+          <div class="lg:text-2xl font-bold">Помните о главном, о своих</div>
+          <div class="font-alt text-4xl lg:text-5xl font-medium -mt-2">любимых людях</div>
+          <div class="leading-normal mt-7 max-lg:text-sm">
+            С кем бы вы хотели отпраздновать Новый год? С коллегами?
+            С друзьями? С семьей? С соседями? С котом и собакой?
+            Отлично! Цените и любите их
+          </div>
+        </div>
+      </div>
+      <div class="recommendation-item lg:col-span-2">
+        <div class="recommendation-item-img h-72 relative">
+          <img src="img/recommendation/6.jpg" alt="" class="absolute-fit object-cover">
+        </div>
+        <div class="recommendation-item-content">
+          <div class="lg:text-2xl font-bold">Займитесь</div>
+          <div class="font-alt text-4xl lg:text-5xl font-medium -mt-2">спортом</div>
+          <div class="leading-normal mt-7 max-lg:text-sm">
+            Чтобы не набрать вес после
+            праздников, скиньте его сейчас!
+            Освободите место для любимых
+            салатиков. Переиграно и уничтожено!
+          </div>
+        </div>
+      </div>
+      <div class="recommendation-item lg:col-span-2">
+        <div class="recommendation-item-img h-72 relative">
+          <img src="img/recommendation/7.jpg" alt="" class="absolute-fit object-cover">
+        </div>
+        <div class="recommendation-item-content">
+          <div class="lg:text-2xl font-bold">Не забудьте</div>
+          <div class="font-alt text-4xl lg:text-5xl font-medium -mt-2">погрустить!</div>
+          <div class="leading-normal mt-7 max-lg:text-sm">
+            Психологи утверждают, что
+            это поможет организоваться
+            и самомотивироваться. Но это
+            не точно, лучше, конечно, веселиться!
+          </div>
+        </div>
+      </div>
+      <div class="recommendation-item lg:col-span-2">
+        <div class="recommendation-item-img h-72 relative">
+          <img src="img/recommendation/8.jpg" alt="" class="absolute-fit object-cover">
+        </div>
+        <div class="recommendation-item-content">
+          <div class="lg:text-2xl font-bold">Следите</div>
+          <div class="font-alt text-4xl lg:text-5xl font-medium -mt-2">за временем</div>
+          <div class="leading-normal mt-7 max-lg:text-sm">
+            Не позвольте предновогодней
+            суматохе заставить вас нарушить
+            традиции и пропустить самое главное!
+            Шампанского всем!
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="postcard">
+    <div class="postcard-subtitle subtitle text-center">Мы сделали для ваших клиентов</div>
+    <div class="postcard-title title text-center">
+      Новогоднюю открытку!
+    </div>
+    <div class="postcard-image">
+
+    </div>
+  </section>
 </body>
 
 </html>
