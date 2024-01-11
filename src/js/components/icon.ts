@@ -1,4 +1,4 @@
-class Counter extends HTMLElement {
+class Icon extends HTMLElement {
   constructor() {
     super()
   }
@@ -13,7 +13,7 @@ class Counter extends HTMLElement {
 }
 
 function register() {
-  customElements.define('c-icon', Counter)
+  customElements.define('c-icon', Icon)
 }
 
 export default { register }

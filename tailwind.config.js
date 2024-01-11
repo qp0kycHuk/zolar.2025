@@ -66,5 +66,6 @@ module.exports = {
     require('@qpokychuk/tailwind-button-plugin'),
     require('@qpokychuk/tailwind-ratio-plugin'),
     require('./tailwind.input.js')({}),
+    require('./tailwind.checkbox.js')({}),
   ],
 }
