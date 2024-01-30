@@ -1,17 +1,35 @@
+@import 'functions';
+
 body {
-  --bg1      : #E7E7E7;
-  --bg2      : #F4F4F4;
-  --bg3      : #fff;
-  --text     : theme('colors.black');
-  --font-base: 'Montserrat', arial, helvetica, sans-serif;
-  --font-alt : 'Sweet Mavka Script', arial, helvetica, sans-serif;
+  // theme colors
+  --primary-rgb : #{cl(#b71540)};
+  --sec-rgb     : #{cl(#CE9B44)};
+  --blue-rgb    : #{cl(#2980b9)};
+  --red-rgb     : #{cl(#c0392b)};
+  --green-rgb   : #{cl(#27ae60)};
+  --yellow-rgb  : #{cl(#f39c12)};
+
+  // colors
+  --bg1-rgb     : #{cl(#ededed)};
+  --bg2-rgb     : #{cl(#f4f4f4)};
+  --bg3-rgb     : #{cl(#fff)};
+  --default-rgb : #{cl(#373737)};
+  --white-rgb   : #{cl(#fff)};
+  --black-rgb   : #{cl(#000)};
+  --bg1         : rgb(var(--bg1-rgb));
+  --bg2         : rgb(var(--bg2-rgb));
+  --bg3         : rgb(var(--bg3-rgb));
+  --default     : rgb(var(--default-rgb));
+  --font-base   : 'Inter', arial, helvetica, sans-serif;
+
+
 
   display       : flex;
   flex-direction: column;
   min-height    : 100vh;
-  background    : var(--bg3);
+  background    : var(--bg1);
   font-family   : var(--font-base);
-  color         : var(--text);
+  color         : var(--default);
 
   &.menu-opened {
     overflow: hidden;
@@ -19,11 +37,23 @@ body {
 }
 
 [data-theme="dark"] {
-  --bg1 : #181818;
-  --bg2 : #282828;
-  --bg3 : #323232;
-  --text: #fff;
+  --bg1-rgb     : #{cl(#181818)};
+  --bg2-rgb     : #{cl(#282828)};
+  --bg3-rgb     : #{cl(#323232)};
+  --default-rgb : #{cl(#fff)};
 
+}
+
+.theme-red {
+  --primary-rgb: var(--red-rgb);
+}
+
+.theme-blue {
+  --primary-rgb: var(--blue-rgb);
+}
+
+.theme-green {
+  --primary-rgb: var(--green-rgb);
 }
 
 @layer components {

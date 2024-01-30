@@ -30,15 +30,18 @@ module.exports = {
       xl: 1230 + 'px',
     },
     colors: {
-      primary: '#b71540',
-      sec: '#CE9B44',
-      blue: '#2980b9',
-      red: '#c0392b',
-      green: '#27ae60',
-      yellow: '#f39c12',
-      gray: '#333',
-      white: '#fff',
-      black: '#302B44',
+      primary: withOpacity('--primary-rgb'),
+      sec: withOpacity('--sec-rgb'),
+      blue: withOpacity('--blue-rgb'),
+      red: withOpacity('--red-rgb'),
+      green: withOpacity('--green-rgb'),
+      yellow: withOpacity('--yellow-rgb'),
+      white: withOpacity('--white-rgb'),
+      black: withOpacity('--black-rgb'),
+      l1: withOpacity('--bg1-rgb'),
+      l2: withOpacity('--bg2-rgb'),
+      l3: withOpacity('--bg3-rgb'),
+      default: withOpacity('--default-rgb'),
     },
     fontFamily: {
       base: 'var(--font-base)',
@@ -48,11 +51,7 @@ module.exports = {
     extend: {
       inputSize: elementsSizes,
       btnSize: elementsSizes,
-      backgroundColor: {
-        l1: 'var(--bg1)',
-        l2: 'var(--bg2)',
-        l3: 'var(--bg3)',
-      },
+
       fontSize: {
         '1.5xl': ['1.375rem', '1.35'],
         '2.1xl': ['1.5625rem', '1.35'],
@@ -65,7 +64,20 @@ module.exports = {
   plugins: [
     require('@qpokychuk/tailwind-button-plugin'),
     require('@qpokychuk/tailwind-ratio-plugin'),
+    // require('./tailwind.button.js')({}),
     require('./tailwind.input.js')({}),
     require('./tailwind.checkbox.js')({}),
   ],
+}
+
+
+
+function withOpacity(variableName) {
+  return ({ opacityValue }) => {
+    if (opacityValue !== undefined) {
+      return 'rgba(var(' + variableName + '), ' + opacityValue + ')'
+    }
+
+    return 'rgba(var(' + variableName + '), 1)'
+  }
 }

@@ -8,8 +8,7 @@
   ],
   "extends": "stylelint-config-standard-scss",
   "plugins": [
-    "stylelint-declaration-block-no-ignored-properties",
-    "stylelint-order"
+    "stylelint-declaration-block-no-ignored-properties"
   ],
   "rules": {
     "no-descending-specificity": null,
@@ -29,7 +28,14 @@
     "no-invalid-position-at-import-rule": null,
     "value-keyword-case": null,
     "alpha-value-notation": "number",
-    "color-function-notation": ["legacy", { "ignore": ["with-var-inside"] }],
+    "color-function-notation": [
+      "legacy",
+      {
+        "ignore": [
+          "with-var-inside"
+        ]
+      }
+    ],
     "media-feature-range-notation": "prefix",
     "plugin/declaration-block-no-ignored-properties": true,
     "scss/at-rule-no-unknown": [
