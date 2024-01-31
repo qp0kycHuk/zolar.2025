@@ -24,23 +24,20 @@ module.exports = plugin.withOptions(
       }
       options.className = options.className.trim()
 
-      addBase({
-        ':root': {
-          [sizeName]: theme('checkboxSize.base'),
-          [colorName]: theme('colors.primary'),
-          [colorLightName]: `theme('colors.primary / 20%')`,
-        },
-      })
+
       addComponents({
         [`.${options.className}`]: {
           display: 'block',
           appearance: 'none',
           height: sizeVar,
           width: sizeVar,
-          border: "1px solid theme('colors.black / 40%')",
+          border: "1px solid theme('colors.default / 40%')",
           outline: 'none !important',
           transition: '.15s',
           boxShadow: '0 0 0 0px ' + colorVar,
+          [sizeName]: theme('checkboxSize.base'),
+          [colorName]: theme('colors.primary'),
+          [colorLightName]: `theme('colors.primary / 20%')`,
           ...options.baseCss,
 
 
