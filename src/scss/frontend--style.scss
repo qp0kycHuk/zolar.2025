@@ -1,6 +1,6 @@
 @import 'functions';
 
-body {
+:root {
   // theme colors
   --primary-rgb : #{cl(#b71540)};
   --sec-rgb     : #{cl(#CE9B44)};
@@ -16,20 +16,25 @@ body {
   --default-rgb : #{cl(#373737)};
   --white-rgb   : #{cl(#fff)};
   --black-rgb   : #{cl(#000)};
+  
+  // variables
   --bg1         : rgb(var(--bg1-rgb));
   --bg2         : rgb(var(--bg2-rgb));
   --bg3         : rgb(var(--bg3-rgb));
   --default     : rgb(var(--default-rgb));
+  
+  // font
   --font-base   : 'Inter', arial, helvetica, sans-serif;
+  
+}
 
-
-
+body {
   display       : flex;
   flex-direction: column;
   min-height    : 100vh;
-  background    : var(--bg1);
+  background    : theme('colors.l3');
   font-family   : var(--font-base);
-  color         : var(--default);
+  color         : theme('colors.default');
 
   &.menu-opened {
     overflow: hidden;
@@ -91,5 +96,4 @@ body {
       }
     }
   }
-
 }
