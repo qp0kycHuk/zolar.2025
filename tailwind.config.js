@@ -51,7 +51,11 @@ module.exports = {
     extend: {
       inputSize: elementsSizes,
       btnSize: elementsSizes,
-
+      spacing: {
+        [15]: 15 * 4 / 16 + 'rem',
+        [18]: 18 * 4 / 16 + 'rem',
+        [65]: '16.25rem'
+      },
       fontSize: {
         '1.5xl': ['1.375rem', '1.35'],
         '2.1xl': ['1.5625rem', '1.35'],
