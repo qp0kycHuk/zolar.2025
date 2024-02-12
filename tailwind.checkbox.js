@@ -4,6 +4,7 @@ const { parseColor, formatColor } = require('tailwindcss/lib/util/color')
 
 const defaultOptions = {
   className: 'checkbox',
+  radioClassName: 'radio',
   disabledOpacity: 0.6,
   lightColorOpacity: 0.2,
   baseCss: {},
@@ -40,8 +41,6 @@ module.exports = plugin.withOptions(
           [colorLightName]: `theme('colors.primary / 20%')`,
           ...options.baseCss,
 
-
-
           '&:focus, &:focus-within, &:is(.dark &):focus, &:is(.dark &):focus-within': {
             borderColor: colorVar,
             boxShadow: '0 0 0 1px ' + colorVar,
@@ -49,14 +48,19 @@ module.exports = plugin.withOptions(
           },
           '@media(hover) ': {
             '&:hover': {
-              boxShadow: `0 0 0 calc(${sizeVar} / 3) ${colorLightVar}`
+              borderColor: colorVar,
             },
           },
           '&:checked': {
             background: `url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e"), ${colorVar}`,
             borderColor: colorVar,
             boxShadow: 'none',
-            boxShadow: `0 0 0 calc(${sizeVar} / 2) rgba(0, 0, 0, 0)`
+            // boxShadow: `0 0 0 calc(${sizeVar} / 2) rgba(0, 0, 0, 0)`
+          },
+
+          [`&.${options.radioClassName}:checked`]: {
+            background: `url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='4'/%3E%3C/svg%3E"), ${colorVar}`,
+
           },
 
           '&:disabled': {
@@ -70,7 +74,12 @@ module.exports = plugin.withOptions(
         {
           [options.className]: (size) => {
             // check is not color
-            const string = size.DEFAULT || size[500] || size
+            let string = size.DEFAULT || size[500] || size
+
+            if (typeof size == 'function') {
+              string = size({});
+            }
+
             const parsed = parseColor(string)
             if (!!parsed?.color) return null
 
@@ -85,17 +94,18 @@ module.exports = plugin.withOptions(
         {
           [options.className]: (color) => {
             // check is color
-            const string = color.DEFAULT || color[500] || color
+            let string = color.DEFAULT || color[500] || color
+
+            if (typeof color == 'function') {
+              string = color({});
+            }
+
             const parsed = parseColor(string)
             if (!parsed?.color) return null
 
             return {
               [colorName]: string,
-              [colorLightName]: formatColor({
-                mode: 'rgba',
-                color: parsed.color,
-                alpha: options.lightColorOpacity,
-              }),
+
             }
           },
         },
