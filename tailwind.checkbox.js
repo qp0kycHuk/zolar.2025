@@ -27,7 +27,7 @@ module.exports = plugin.withOptions(
 
 
       addComponents({
-        [`.${options.className}`]: {
+        [`.${options.className}, .${options.radioClassName}`]: {
           display: 'block',
           appearance: 'none',
           height: sizeVar,
@@ -46,26 +46,29 @@ module.exports = plugin.withOptions(
             boxShadow: '0 0 0 1px ' + colorVar,
             zIndex: 2,
           },
+
           '@media(hover) ': {
             '&:hover': {
               borderColor: colorVar,
             },
           },
+
           '&:checked': {
-            background: `url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e"), ${colorVar}`,
             borderColor: colorVar,
             boxShadow: 'none',
-            // boxShadow: `0 0 0 calc(${sizeVar} / 2) rgba(0, 0, 0, 0)`
-          },
-
-          [`&.${options.radioClassName}:checked`]: {
-            background: `url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='4'/%3E%3C/svg%3E"), ${colorVar}`,
-
           },
 
           '&:disabled': {
             opacity: options.disabledOpacity,
           },
+        },
+        [`.${options.className}:checked`]: {
+          background: `url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e"), ${colorVar}`,
+
+          // boxShadow: `0 0 0 calc(${sizeVar} / 2) rgba(0, 0, 0, 0)`
+        },
+        [`.${options.radioClassName}:checked`]: {
+          background: `url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='4'/%3E%3C/svg%3E"), ${colorVar}`,
         },
       })
 
