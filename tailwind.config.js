@@ -68,9 +68,12 @@ module.exports = {
   plugins: [
     require('@qpokychuk/tailwind-button-plugin'),
     require('@qpokychuk/tailwind-ratio-plugin'),
-    // require('./tailwind.button.js')({}),
-    require('./tailwind.input.js')({}),
-    require('./tailwind.checkbox.js')({}),
+    require('@qpokychuk/tailwind-input-plugin')({
+      border: "1px solid theme('colors.default / 40%')",
+    }),
+    require('@qpokychuk/tailwind-checkbox-plugin')({
+      border: "1px solid theme('colors.default / 40%')",
+    }),
   ],
 }
 
