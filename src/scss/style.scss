@@ -16,16 +16,16 @@
   --default-rgb : #{cl(#373737)};
   --white-rgb   : #{cl(#fff)};
   --black-rgb   : #{cl(#000)};
-  
+
   // variables
-  --bg1         : rgb(var(--bg1-rgb));
-  --bg2         : rgb(var(--bg2-rgb));
-  --bg3         : rgb(var(--bg3-rgb));
-  --default     : rgb(var(--default-rgb));
-  
+  --bg1    : rgb(var(--bg1-rgb));
+  --bg2    : rgb(var(--bg2-rgb));
+  --bg3    : rgb(var(--bg3-rgb));
+  --default: rgb(var(--default-rgb));
+
   // font
-  --font-base   : 'Inter', arial, helvetica, sans-serif;
-  
+  --font-base: 'Inter', arial, helvetica, sans-serif;
+
 }
 
 body {
@@ -33,7 +33,7 @@ body {
   flex-direction: column;
   min-height    : 100vh;
   background    : theme('colors.l3');
-  font-family   : var(--font-base);
+  font-family   : theme('fontFamily.base');
   color         : theme('colors.default');
 
   &.menu-opened {
@@ -47,18 +47,6 @@ body {
   --bg3-rgb     : #{cl(#323232)};
   --default-rgb : #{cl(#fff)};
 
-}
-
-.theme-red {
-  --primary-rgb: var(--red-rgb);
-}
-
-.theme-blue {
-  --primary-rgb: var(--blue-rgb);
-}
-
-.theme-green {
-  --primary-rgb: var(--green-rgb);
 }
 
 @layer components {
