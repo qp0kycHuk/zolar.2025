@@ -14,6 +14,9 @@ const headingStyles = {
 module.exports = {
   content: ['./src/**/*.{html,js,ts}'],
   darkMode: ['class', '[data-theme="dark"]'],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   theme: {
     screens: {
       xs: 420 + 29.98 + 'px',
