@@ -1,9 +1,9 @@
 const elementsSizes = {
   xs: '24px',
   sm: '32px',
-  base: '50px',
-  lg: '60px',
-  xl: '72px',
+  base: '42px',
+  lg: '52px',
+  xl: '64px',
 }
 
 const headingStyles = {
@@ -47,16 +47,18 @@ module.exports = {
       default: withOpacity('--default-rgb'),
     },
     fontFamily: {
-      base: 'var(--font-base)',
-      alt: 'var(--font-alt)',
+      base: "'Vinnytsia Sans', arial, helvetica, sans-serif",
+      alt: "'Excentra Pro', arial, helvetica, sans-serif",
     },
     zIndex: [0, 321, 322, 323, 324, 325, 326, 327, 328, 329, 'auto'],
     extend: {
       inputSize: elementsSizes,
       btnSize: elementsSizes,
       spacing: {
+        [12.5]: 12.5 * 4 / 16 + 'rem',
         [15]: 15 * 4 / 16 + 'rem',
         [18]: 18 * 4 / 16 + 'rem',
+        [30]: 30 * 4 / 16 + 'rem',
         [65]: '16.25rem'
       },
       fontSize: {
