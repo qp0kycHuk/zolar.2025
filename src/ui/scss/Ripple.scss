@@ -8,7 +8,7 @@
 
   }
 
-  .btn-fill .ripple {
+  .btn-fill:not(.btn-l3) .ripple {
     background: radial-gradient(rgba(255, 255, 255, 0.1) 0,
         rgba(255, 255, 255, 0.2) 40%,
         rgba(255, 255, 255, 0.2) calc(60% - 10px),

@@ -5,9 +5,10 @@
 @layer base {
   @import '@qpokychuk/ripple/index.css';
   @import "@fancyapps/ui/dist/fancybox/fancybox.css";
-  @import 'swiper/css';
+  @import 'swiper/scss';
 }
 
+@import 'swiper/scss/pagination';
 @import '@qpokychuk/vinnytsia-sans/index.css';
 @import '@qpokychuk/excentra-pro/index.css';
 @import '../ui/ui-core';

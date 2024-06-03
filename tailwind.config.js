@@ -18,6 +18,9 @@ module.exports = {
     hoverOnlyWhenSupported: true,
   },
   theme: {
+    borderStyles: {
+      styles: true,
+    },
     screens: {
       xs: 420 + 29.98 + 'px',
       sm: 580 + 29.98 + 'px',
@@ -55,6 +58,7 @@ module.exports = {
       inputSize: elementsSizes,
       btnSize: elementsSizes,
       spacing: {
+        [4.5]: 4.5 * 4 / 16 + 'rem',
         [12.5]: 12.5 * 4 / 16 + 'rem',
         [15]: 15 * 4 / 16 + 'rem',
         [18]: 18 * 4 / 16 + 'rem',
@@ -79,6 +83,7 @@ module.exports = {
     require('@qpokychuk/tailwind-checkbox-plugin')({
       border: "1px solid theme('colors.default / 40%')",
     }),
+    require('tailwindcss-border-styles')(),
   ],
 }
 

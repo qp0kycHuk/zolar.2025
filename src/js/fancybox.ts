@@ -20,6 +20,9 @@ function init() {
     // @ts-ignore
     Fancybox.show([{ src, ...options }], options)
   }
+
+  // @ts-ignore
+  Fancybox.modal.open('activity-dialog.html')
 }
 
 interface CustomWindow extends Window {
