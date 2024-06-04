@@ -1,8 +1,8 @@
 import Swiper from 'swiper'
-import { Autoplay, Controller, Navigation, Pagination } from 'swiper/modules'
+import { Autoplay, Navigation, Pagination, Thumbs } from 'swiper/modules'
 // import { register } from 'swiper/element/bundle'
 
-Swiper.use([Autoplay, Controller, Navigation, Pagination])
+Swiper.use([Autoplay, Thumbs, Navigation, Pagination])
 // @ts-ignore
 window.Swiper = Swiper
 

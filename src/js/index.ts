@@ -7,8 +7,10 @@ import tab from 'npm-kit-tab'
 import toggle from 'npm-kit-toggle'
 import ripple from '@qpokychuk/ripple'
 import swiper from './swiper'
+import ymaps from './ymaps'
 
 import '../scss/index.scss'
+import animations from './animations'
 
 window.addEventListener('DOMContentLoaded', () => loadHandler())
 
@@ -27,4 +29,6 @@ function loadHandler() {
   ripple.deAttach('.btn-text')
 
   swiper.init()
+  ymaps.init()
+  animations.init()
 }

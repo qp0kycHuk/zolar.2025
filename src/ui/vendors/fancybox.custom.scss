@@ -2,11 +2,56 @@
   color: inherit;
 
   .fancybox__content {
-    color: inherit;
+    padding   : 0;
+    background: none;
+    max-width : 100%;
   }
 
   .fancybox__slide {
-    padding: 16px;
+    padding  : 15px;
+    max-width: 100%;
 
+  }
+
+  .carousel__button.is-close {
+    position : fixed;
+    right    : 0;
+    top      : 0;
+    padding  : 16px;
+    width    : 68px;
+    height   : 68px;
+    opacity  : 0;
+    animation: close-entry .25s .5s forwards !important;
+
+    @media(max-width:theme('screens.sm')) {
+      position: absolute;
+      width   : 32px;
+      height  : 32px;
+      top     : 0;
+      right   : 0;
+      padding : 0;
+
+    }
+
+    svg {
+      @media(max-width:theme('screens.sm')) {
+        filter: none;
+        color : theme('colors.default');
+        width : 12px;
+        height: 12px;
+      }
+    }
+  }
+}
+
+@keyframes close-entry {
+  0% {
+    opacity   : 0;
+    visibility: hidden;
+  }
+
+  100% {
+    opacity   : 1;
+    visibility: visible;
   }
 }

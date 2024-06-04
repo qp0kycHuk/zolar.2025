@@ -7,16 +7,32 @@
   </a>
 
   <div class="flex gap-12.5 max-lg:hidden">
-    <a href="javascript:;" class="btn btn-text btn-default">Услуги</a>
-    <a href="javascript:;" class="btn btn-text btn-default">Портфолио</a>
-    <a href="javascript:;" class="btn btn-text btn-default">Отзывы</a>
-    <a href="javascript:;" class="btn btn-text btn-default">О нас</a>
-    <a href="javascript:;" class="btn btn-text btn-default">Контакты</a>
+    <a href="javascript:;" class="btn hover-underline btn-text btn-default relative" data-scroll="#service">
+      Услуги
+      <div class="absolute -inset-6"></div>
+    </a>
+    <a href="javascript:;" class="btn hover-underline btn-text btn-default relative" data-scroll="#examples">
+      Портфолио
+      <div class="absolute -inset-6"></div>
+    </a>
+    <a href="javascript:;" class="btn hover-underline btn-text btn-default relative" data-scroll="#review">
+      Отзывы
+      <div class="absolute -inset-6"></div>
+    </a>
+    <a href="javascript:;" class="btn hover-underline btn-text btn-default relative" data-scroll="#about">
+      О нас
+      <div class="absolute -inset-6"></div>
+    </a>
+    <a href="javascript:;" class="btn hover-underline btn-text btn-default relative" data-scroll="#contact">
+      Контакты
+      <div class="absolute -inset-6"></div>
+    </a>
 
   </div>
 
-  <a href="javascript:;" class="btn btn-text btn-default max-sm:hidden">
+  <a href="javascript:;" class="btn btn-text btn-default max-sm:hidden hover-underline">
     <span class="text-xl font-bold font-alt">8 918 000 00 00</span>
+    <div class="absolute -inset-6"></div>
   </a>
 
   <a href="javascript:;" class="btn btn-default btn-contur rounded-full btn-icon sm:hidden max-sm:btn-sm">
@@ -34,18 +50,19 @@
   <div class="started-shadow"></div>
   <div class="started-content">
     <div>
-      <div class="started-title">
+      <div class="started-title" data-animation="fadeInUp">
         Архитектурное
         проектирование
       </div>
-
-      <button class="btn btn-white btn-contur rounded-full px-6 gap-1">
-        <span class="font-alt">Подробнее</span>
-        <c-icon class="icon text-xl" href="img/icons.svg#arrow-right"></c-icon>
-      </button>
+      <div class="flex" data-animation="fadeInUp">
+        <button class="btn btn-white btn-contur rounded-full px-6 gap-1">
+          <span class="font-alt">Подробнее</span>
+          <c-icon class="icon text-xl" href="img/icons.svg#arrow-right"></c-icon>
+        </button>
+      </div>
     </div>
     <div class="">
-      <div class="leading-normal max-lg:text-sm">
+      <div class="leading-normal max-lg:text-sm" data-animation="fadeInUp">
         Проектная организация, специализирующаяся <br class="max-lg:hidden">
         на архитектурном проектировании зданий, сооружений <br class="max-lg:hidden">
         и объектов инфраструктуры.
@@ -62,9 +79,9 @@
 <section class="about">
   <div class="about-left">
     <div class="about-image ratio ratio-[414/500]">
-      <img src="img/about.jpg" alt="" class="absolute-fit object-cover ">
+      <img src="img/about.jpg" alt="" class="absolute-fit object-cover " data-animation="fadeInUp">
 
-      <div class="absolute w-full top-full left-0 flex mt-3 max-sm:text-xs">
+      <div class="absolute w-full top-full left-0 flex mt-3 max-sm:text-xs" data-animation="fadeInUp">
         <div class="font-alt">Андрей Капительев</div>
         <div class="opacity-50 ml-auto">Главный архитектор</div>
       </div>
@@ -72,8 +89,8 @@
 
   </div>
   <div class="about-content text-default/80 relative max-sm:text-sm">
-    <div class="font-alt absolute text-[128px] top-0 max-lg:right-full lg:left-0 leading-none opacity-20">“</div>
-    <div>
+    <div class="font-alt absolute text-[128px] top-0 max-lg:right-full lg:left-0 leading-none opacity-20" data-animation="fadeInUp">“</div>
+    <div data-animation="fadeInUp">
       <span class="font-alt text-base sm:text-xl text-default">Компания «Капитель»</span> — это проектная организация, специализирующаяся на архитектурном проектировании зданий, сооружений и объектов инфраструктуры. Они предлагают широкий спектр услуг, включая проведение изысканий, сбор ИРД, разработку проектной документации, получение разрешения на строительство.
       <br><br>
       <span class="font-alt text-lg sm:text-2xl text-default">
@@ -83,37 +100,65 @@
       <br><br>
       Основные виды деятельности компании включают разработку проектов жилых домов, общественных зданий, производственных сооружений, городских территорий, дорог и инженерных сетей. Также они предоставляют услуги по разработке эскизных проектов, предварительных архитектурных и объёмно-планировочных решений, проектной документации и рабочего проекта.
     </div>
-    <img src="img/about-sign.png" alt="" class="mt-10">
+    <img src="img/about-sign.png" alt="" class="mt-10" data-animation="fadeInUp">
   </div>
 </section>
 
-<section class="video section-lines">
-  <div class="video-image">
-    <img src="img/video.jpg" alt="" class="absolute-fit object-cover">
+<section class="video section-lines" data-tab-cover>
+  <div class="absolute-fit">
+    <div class="tab-content absolute-fit flex items-center justify-center !transform-none" data-tab-content="1">
+      <div class="video-image">
+        <img src="img/video.jpg" alt="" class="absolute-fit object-cover">
+      </div>
+      <div class="absolute-fit bg-black/50"></div>
+
+      <a href="javascript:;" class="video-button btn btn-icon btn-white btn-contur">
+        <c-icon class="icon" href="img/icons.svg#play"></c-icon>
+      </a>
+    </div>
+    <div class="tab-content absolute-fit flex items-center justify-center !transform-none" data-tab-content="2">
+      <div class="video-image">
+        <img src="img/test.jpg" alt="" class="absolute-fit object-cover">
+      </div>
+      <div class="absolute-fit bg-black/50"></div>
+
+      <a href="javascript:;" class="video-button btn btn-icon btn-white btn-contur">
+        <c-icon class="icon" href="img/icons.svg#play"></c-icon>
+      </a>
+    </div>
+    <div class="tab-content absolute-fit flex items-center justify-center !transform-none" data-tab-content="3">
+      <div class="video-image">
+        <img src="img/video.jpg" alt="" class="absolute-fit object-cover">
+      </div>
+      <div class="absolute-fit bg-black/50"></div>
+
+      <a href="javascript:;" class="video-button btn btn-icon btn-white btn-contur">
+        <c-icon class="icon" href="img/icons.svg#play"></c-icon>
+      </a>
+    </div>
   </div>
-  <div class="absolute-fit bg-black/50"></div>
-  <div class="video-nav flex max-sm:flex-col gap-3 sm:gap-8 lg:gap-28 relative lg:px-24">
-    <a href="javascript:;" class="btn btn-white btn-text">
+
+  <div class="video-nav flex max-sm:flex-col gap-3 sm:gap-8 lg:gap-28 relative lg:px-24" data-animation="fadeInUp">
+    <a href="javascript:;" class="btn btn-white btn-text hover-underline" data-tab-link="1">
       <div class="opacity-60">Видео о нас</div>
+      <div class="absolute sm:-inset-4 lg:-inset-12"></div>
     </a>
-    <a href="javascript:;" class="btn btn-white btn-text">
+    <a href="javascript:;" class="btn btn-white btn-text hover-underline" data-tab-link="2">
       <div class="opacity-60">Капитель </div>
+      <div class="absolute sm:-inset-4 lg:-inset-12"></div>
     </a>
-    <a href="javascript:;" class="btn btn-white btn-text">
+    <a href="javascript:;" class="btn btn-white btn-text hover-underline" data-tab-link="3">
       <div class="opacity-60">Архитектурно-проектное бюро </div>
+      <div class="absolute sm:-inset-4 lg:-inset-12"></div>
     </a>
   </div>
-
-  <a href="javascript:;" class="video-button btn btn-icon btn-white btn-contur">
-    <c-icon class="icon" href="img/icons.svg#play"></c-icon>
-  </a>
 </section>
 
-<section class="activity p-section section-lines">
-  <div class="title mb-8 sm:mb-12">Направления деятельности</div>
+<section class="activity p-section section-lines" id="service">
+  <div class="title mb-8 sm:mb-12" data-animation="fadeInUp">Направления деятельности</div>
 
   <div class="activity-grid">
-    <div class="activity-item btn-group group">
+    <div class="activity-item btn-group group" data-animation="fadeInUp">
       <div class="activity-item-placeholder"></div>
       <div class="activity-item-image">
         <img src="/img/activity/1/preview.jpg" alt="" class="absolute-fit object-cover">
@@ -139,7 +184,7 @@
         </button>
       </div>
     </div>
-    <div class="activity-item btn-group group">
+    <div class="activity-item btn-group group" data-animation="fadeInUp">
       <div class="activity-item-placeholder"></div>
       <div class="activity-item-image">
         <img src="/img/activity/2/preview.jpg" alt="" class="absolute-fit object-cover">
@@ -167,7 +212,7 @@
     </div>
   </div>
   <div class="sm:grid sm:grid-cols-2 ">
-    <div class="activity-item btn-group group">
+    <div class="activity-item btn-group group" data-animation="fadeInUp">
       <div class="activity-item-placeholder"></div>
       <div class="activity-item-image">
         <img src="/img/activity/3/preview.jpg" alt="" class="absolute-fit object-cover">
@@ -194,7 +239,7 @@
         </button>
       </div>
     </div>
-    <div class="activity-item btn-group group">
+    <div class="activity-item btn-group group" data-animation="fadeInUp">
       <div class="activity-item-placeholder"></div>
       <div class="activity-item-image">
         <img src="/img/activity/4/preview.jpg" alt="" class="absolute-fit object-cover">
@@ -225,9 +270,9 @@
 </section>
 
 <section class="advantages p-section">
-  <div class="title mb-8 sm:mb-12">Преимущества</div>
+  <div class="title mb-8 sm:mb-12" data-animation="fadeInUp">Преимущества</div>
   <div class="grid lg:grid-cols-5">
-    <div class="advantages-item">
+    <div class="advantages-item" data-animation="fadeInUp">
       <div class="advantages-item-image">
         <c-icon class="icon" href="img/icons.svg#case"></c-icon>
       </div>
@@ -243,7 +288,7 @@
         </div>
       </div>
     </div>
-    <div class="advantages-item">
+    <div class="advantages-item" data-animation="fadeInUp" data-delay="0.1">
       <div class="advantages-item-image">
         <c-icon class="icon" href="img/icons.svg#building"></c-icon>
       </div>
@@ -260,7 +305,7 @@
         </div>
       </div>
     </div>
-    <div class="advantages-item">
+    <div class="advantages-item" data-animation="fadeInUp" data-delay="0.2">
       <div class="advantages-item-image">
         <c-icon class="icon" href="img/icons.svg#ruler"></c-icon>
       </div>
@@ -276,7 +321,7 @@
         </div>
       </div>
     </div>
-    <div class="advantages-item">
+    <div class="advantages-item" data-animation="fadeInUp" data-delay="0.3">
       <div class="advantages-item-image">
         <c-icon class="icon" href="img/icons.svg#key-square"></c-icon>
       </div>
@@ -294,7 +339,7 @@
         </div>
       </div>
     </div>
-    <div class="advantages-item">
+    <div class="advantages-item" data-animation="fadeInUp" data-delay="0.4">
       <div class="advantages-item-image">
         <c-icon class="icon" href="img/icons.svg#crop"></c-icon>
       </div>
@@ -313,16 +358,16 @@
   </div>
 </section>
 
-<section class="examples p-section overflow-hidden" data-tab-cover>
-  <div class="title mb-8 sm:mb-12">Примеры работ</div>
-  <div class="examples-tabs ">
+<section class="examples p-section overflow-hidden" data-tab-cover id="examples">
+  <div class="title mb-8 sm:mb-12" data-animation="fadeInUp">Примеры работ</div>
+  <div class="examples-tabs " data-animation="fadeInUp">
     <div class="examples-tab" data-tab-link="0">Все работы</div>
     <div class="examples-tab" data-tab-link="1">Жилые здания</div>
     <div class="absolute bottom-0 h-px bg-default transition-all" data-tab-plate></div>
   </div>
   <div class="examples-tabs-line"></div>
 
-  <div class="tab-content-cover mt-6 sm:mt-12">
+  <div class="tab-content-cover mt-6 sm:mt-12" data-animation="fadeInUp">
     <% for(let i = 0; i < 2; i++) { %>
     <div class="tab-content !overflow-visible" data-tab-content="<%= i %>">
       <div class="relative examples-slider">
@@ -379,10 +424,10 @@
 </script>
 
 <section class="howwork p-section overflow-hidden">
-  <div class="title mb-8 sm:mb-12">Как мы работаем</div>
+  <div class="title mb-8 sm:mb-12" data-animation="fadeInUp">Как мы работаем</div>
 
   <div class="grid lg:grid-cols-5">
-    <div class="howwork-item">
+    <div class="howwork-item" data-animation="fadeInUp">
       <div class="howwork-item-image absolute-fit">
         <img src="img/step/1.jpg" alt="" class="absolute-fit">
       </div>
@@ -404,7 +449,7 @@
         </div>
       </div>
     </div>
-    <div class="howwork-item">
+    <div class="howwork-item" data-animation="fadeInUp" data-delay="0.1">
       <div class="howwork-item-image absolute-fit">
         <img src="img/step/2.jpg" alt="" class="absolute-fit">
       </div>
@@ -426,7 +471,7 @@
         </div>
       </div>
     </div>
-    <div class="howwork-item">
+    <div class="howwork-item" data-animation="fadeInUp" data-delay="0.2">
       <div class="howwork-item-image absolute-fit">
         <img src="img/step/3.jpg" alt="" class="absolute-fit">
       </div>
@@ -448,7 +493,7 @@
         </div>
       </div>
     </div>
-    <div class="howwork-item">
+    <div class="howwork-item" data-animation="fadeInUp" data-delay="0.3">
       <div class="howwork-item-image absolute-fit">
         <img src="img/step/4.jpg" alt="" class="absolute-fit">
       </div>
@@ -470,7 +515,7 @@
         </div>
       </div>
     </div>
-    <div class="howwork-item">
+    <div class="howwork-item" data-animation="fadeInUp" data-delay="0.4">
       <div class="howwork-item-image absolute-fit">
         <img src="img/step/5.jpg" alt="" class="absolute-fit">
       </div>
@@ -496,9 +541,9 @@
 </section>
 
 <section class="case p-section section-lines overflow-hidden">
-  <div class="title mb-8 sm:mb-10">Наши кейсы</div>
+  <div class="title mb-8 sm:mb-10" data-animation="fadeInUp">Наши кейсы</div>
 
-  <div class="case-slider relative">
+  <div class="case-slider relative" data-animation="fadeInUp">
     <div class="swiper -mx-2 sm:-mx-4.5 max-lg:overflow-visible">
       <div class="swiper-wrapper">
         <% for(let i = 0; i < 10; i++) { %>
@@ -551,7 +596,7 @@
       </button>
     </div>
   </div>
-  <div class="relative mt-14">
+  <div class="relative mt-14" data-animation="fadeInUp">
     <div class="case-pagination absolute"></div>
   </div>
 </section>
@@ -579,9 +624,9 @@
 </script>
 
 <section class="extended p-section">
-  <div class="title mb-8 sm:mb-10">Дополнительные возможности</div>
+  <div class="title mb-8 sm:mb-10" data-animation="fadeInUp">Дополнительные возможности</div>
 
-  <div class="extended-grid">
+  <div class="extended-grid" data-animation="fadeInUp">
     <div class="extended-item lg:row-span-2">
       <div class="extended-item-image absolute-fit">
         <img src="img/extended/1.jpg" alt="" class="absolute-fit object-cover">
@@ -624,10 +669,10 @@
 <div class="border-t border-dashed border-default/15"></div>
 
 <section class="question p-section">
-  <div class="title mb-8 sm:mb-10">Вопрос-ответ</div>
+  <div class="title mb-8 sm:mb-10" data-animation="fadeInUp">Вопрос-ответ</div>
 
   <% for(let i = 0; i < 5; i++) { %>
-  <div class="question-item border-t border-default/15 group" data-toggle-cover>
+  <div class="question-item border-t border-default/15 group" data-toggle-cover data-animation="fadeInUp">
     <button class="flex items-center gap-4 btn-group w-full py-5" data-toggle-link>
       <c-icon class="icon text-2xl opacity-30" href="img/icons.svg#question-circle"></c-icon>
       <div class="sm:text-2xl font-alt text-left">Как проходит сотрудничество с нашим бюро?</div>
@@ -648,11 +693,11 @@
   <% } %>
 </section>
 
-<section class="reviews p-section overflow-hidden">
-  <div class="title mb-8 sm:mb-10">Нам доверяют</div>
+<section class="reviews p-section overflow-hidden" id="review">
+  <div class="title mb-8 sm:mb-10" data-animation="fadeInUp">Нам доверяют</div>
 
 
-  <div class="reviews-slider relative">
+  <div class="reviews-slider relative" data-animation="fadeInUp">
     <div class="swiper -mx-2 sm:-mx-4.5 max-lg:overflow-visible">
       <div class="swiper-wrapper">
         <% for(let i = 0; i < 10; i++) { %>
@@ -705,7 +750,7 @@
       </button>
     </div>
   </div>
-  <div class="relative mt-14">
+  <div class="relative mt-14" data-animation="fadeInUp">
     <div class="reviews-pagination absolute"></div>
   </div>
 </section>
@@ -732,15 +777,15 @@
   })
 </script>
 
-<section class="description p-section overflow-hidden section-lines">
-  <div class="title mb-8 sm:mb-10">О нас</div>
+<section class="description p-section overflow-hidden section-lines" id="about">
+  <div class="title mb-8 sm:mb-10" data-animation="fadeInUp">О нас</div>
   <div class="grid lg:grid-cols-2 items-center gap-6 lg:gap-16 relative z-[1]">
     <div>
-      <div class="ratio ratio-[600/450]">
+      <div class="ratio ratio-[600/450]" data-animation="fadeInUp">
         <img src="img/description.jpg" alt="" class="absolute-fit">
       </div>
     </div>
-    <div class="description-content text-default/80 relative max-sm:text-sm">
+    <div class="description-content text-default/80 relative max-sm:text-sm" data-animation="fadeInUp">
       <span class="font-alt text-base sm:text-xl text-default">Компания «Капитель»</span> — это проектная организация, специализирующаяся на архитектурном проектировании зданий, сооружений и объектов инфраструктуры. Они предлагают широкий спектр услуг, включая проведение изысканий, сбор ИРД, разработку проектной документации, получение разрешения на строительство.
       <br><br>
       <span class="font-alt text-lg sm:text-2xl text-default">
@@ -755,27 +800,28 @@
   </div>
 
   <div class="flex lg:items-center max-lg:flex-col mt-6 lg:mt-11 gap-6 lg:gap-18 lg:pl-6">
-    <div class="text-lg sm:text-2xl font-alt">Архитекторы, дизайнеры, строители</div>
-    <div class="description-info">
-      <div class="text-lg sm:text-2xl font-alt">Более 10 специалистов в команде</div>
-
-      <div class="description-line max-lg:hidden"></div>
+    <div class="text-lg sm:text-2xl font-alt" data-animation="fadeInUp">Архитекторы, дизайнеры, строители</div>
+    <div class="relative">
+      <div class="description-info" data-animation="fadeInUp">
+        <div class="text-lg sm:text-2xl font-alt">Более 10 специалистов в команде</div>
+      </div>
+      <div class="description-line max-lg:hidden" data-animation="fadeIn"></div>
     </div>
   </div>
 </section>
 
-<section class="contact p-section">
-  <div class="title mb-8 sm:mb-10">Контакты</div>
+<section class="contact p-section" id="contact">
+  <div class="title mb-8 sm:mb-10" data-animation="fadeInUp">Контакты</div>
 
   <div class="grid lg:grid-cols-3 gap-3 sm:gap-7 items-start  flex-col">
-    <div class="contact-item">
+    <a href="javascript:;" class="contact-item hover-underline" data-animation="fadeInUp">
       <div class="pointer-events-none absolute inset-2 border-default/10 border border-t-dashed border-b-dashed"></div>
       <div class="contact-item-icon">
         <c-icon class="icon" href="img/icons.svg#phone"></c-icon>
       </div>
       <div class="text-lg sm:text-2xl font-alt">8 918 000 00 00</div>
-    </div>
-    <div class="contact-item">
+    </a>
+    <a href="javascript:;" class="contact-item hover-underline" data-animation="fadeInUp" data-scroll="#contact-map">
       <div class="pointer-events-none absolute inset-2 border-default/10 border border-l-dashed border-t-dashed"></div>
       <div class="contact-item-icon">
         <c-icon class="icon" href="img/icons.svg#building"></c-icon>
@@ -784,23 +830,30 @@
         ст-ца Динская, <br>
         Красноармейская ул., 29А
       </div>
-    </div>
-    <div class="contact-item">
+    </a>
+    <a href="javascript:;" class="contact-item hover-underline" data-animation="fadeInUp">
       <div class="pointer-events-none absolute inset-2 border-default/10 border border-l-dashed border-r-dashed"></div>
       <div class="contact-item-icon">
         <c-icon class="icon" href="img/icons.svg#email"></c-icon>
       </div>
       <div class="text-lg sm:text-2xl font-alt">info@kapitel-architect.ru</div>
-    </div>
+    </a>
   </div>
 </section>
+
+<div class="map" id="contact-map">
+
+</div>
 
 <footer class="footer">
   <div class="footer-logo">
     <img src="img/logo-white.png" alt="">
   </div>
   <div class="footer-c">© ООО «Капитель» 2024</div>
-  <a href="https://stdkit.ru" class="footer-dev">Разработка: Студия К.И.Т</a>
+  <a target="_blank" href="https://stdkit.ru" class="footer-dev hover-underline relative">
+    Разработка: Студия К.И.Т
+    <div class="absolute -inset-5"></div>
+  </a>
 </footer>
 
 <%= require('./html-includes/footer.html')() %>
