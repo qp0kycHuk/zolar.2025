@@ -8,9 +8,9 @@ import toggle from 'npm-kit-toggle'
 import ripple from '@qpokychuk/ripple'
 import swiper from './swiper'
 import ymaps from './ymaps'
+import animations from './animations'
 
 import '../scss/index.scss'
-import animations from './animations'
 
 window.addEventListener('DOMContentLoaded', () => loadHandler())
 
