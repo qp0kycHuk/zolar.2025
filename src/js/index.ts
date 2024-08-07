@@ -31,4 +31,28 @@ function loadHandler() {
   swiper.init()
   ymaps.init()
   animations.init()
+
+  scrollHandler()
+  document.addEventListener('toggleopen', toggleOpenHandler)
+  document.addEventListener('toggleclose', toggleCloseHandler)
+}
+
+window.addEventListener('scroll', scrollHandler)
+
+function scrollHandler() {
+  document.body.classList.toggle('scroll-top', window.scrollY == 0)
+}
+
+const menusIds = ['lk-menu', 'menu', 'catalog-filter']
+
+function toggleOpenHandler(event: any) {
+  if (menusIds.includes(event.detail.target.id)) {
+    document.body.classList.add('menu-opened')
+  }
+}
+
+function toggleCloseHandler(event: any) {
+  if (menusIds.includes(event.detail.target.id)) {
+    document.body.classList.remove('menu-opened')
+  }
 }
