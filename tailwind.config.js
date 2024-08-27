@@ -82,7 +82,6 @@ module.exports = {
     require('@qpokychuk/tailwind-checkbox-plugin')({
       border: "1px solid theme('colors.default / 40%')",
     }),
-    require('tailwindcss-border-styles')(),
   ],
 }
 

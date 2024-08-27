@@ -1,7 +1,7 @@
 @import 'functions';
 
 :root {
-  // theme colors
+  /* theme colors */
   --primary-rgb : #{cl(#1B4B9B)};
   --sec-rgb     : #{cl(#CE9B44)};
   --blue-rgb    : #{cl(#2173E5)};
@@ -9,7 +9,7 @@
   --green-rgb   : #{cl(#27ae60)};
   --yellow-rgb  : #{cl(#FECB29)};
 
-  // colors
+  /* colors */
   --bg1-rgb     : #{cl(#ededed)};
   --bg2-rgb     : #{cl(#F5F7FB)};
   --bg3-rgb     : #{cl(#fff)};
@@ -17,11 +17,19 @@
   --white-rgb   : #{cl(#fff)};
   --black-rgb   : #{cl(#000)};
 
-  // variables
+  /* variables */
   --bg1    : rgb(var(--bg1-rgb));
   --bg2    : rgb(var(--bg2-rgb));
   --bg3    : rgb(var(--bg3-rgb));
   --default: rgb(var(--default-rgb));
+
+}
+
+[data-theme="dark"] {
+  --bg1-rgb     : #{cl(#181818)};
+  --bg2-rgb     : #{cl(#282828)};
+  --bg3-rgb     : #{cl(#323232)};
+  --default-rgb : #{cl(#fff)};
 
 }
 
@@ -36,14 +44,6 @@ body {
   &.menu-opened {
     overflow: hidden;
   }
-}
-
-[data-theme="dark"] {
-  --bg1-rgb     : #{cl(#181818)};
-  --bg2-rgb     : #{cl(#282828)};
-  --bg3-rgb     : #{cl(#323232)};
-  --default-rgb : #{cl(#fff)};
-
 }
 
 @media (hover) {
@@ -102,5 +102,4 @@ body {
       }
     }
   }
-
 }
