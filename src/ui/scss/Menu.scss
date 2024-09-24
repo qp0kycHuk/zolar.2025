@@ -5,10 +5,11 @@ c-menu-items {
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.04);
   border    : 1px solid theme('colors.default / 5%');
 
-  width        : 224px;
-  background   : theme('colors.l3');
-  color        : theme('colors.default');
-  border-radius: 6px;
+  width     : 224px;
+  background: theme('colors.l3');
+  color     : theme('colors.default');
+
+  // border-radius: 6px;
 
   transition: .25s var(--elastic, ease);
 

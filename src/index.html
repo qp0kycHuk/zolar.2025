@@ -10,10 +10,34 @@
       toggle
       <c-icon class="icon text-xs group-data-[active]:-rotate-90" href="img/icons.svg#to-right"></c-icon>
     </c-menu-button>
-    <c-menu-items class="overflow-hidden" placement="top">
-      <c-menu-item class="btn btn-primary cursor-pointer">item 1</c-menu-item>
-      <c-menu-item class="btn btn-primary cursor-pointer">item 2</c-menu-item>
-      <c-menu-item class="btn btn-primary cursor-pointer">item 3</c-menu-item>
+    <c-menu-items class="" placement="bottom">
+      <c-menu-item class="btn btn-primary cursor-pointer justify-start">item 1</c-menu-item>
+      <c-menu-item class="btn btn-primary cursor-pointer justify-start">item 2</c-menu-item>
+      <c-menu-item class="btn btn-primary cursor-pointer justify-start">item 3</c-menu-item>
+
+      <c-menu class="group m-auto">
+        <c-menu-button class="btn btn-primary cursor-pointer justify-start">
+          toggle
+          <c-icon class="icon text-xs ml-auto" href="img/icons.svg#to-right"></c-icon>
+        </c-menu-button>
+        <c-menu-items class="overflow-hidden" placement="right">
+          <c-menu-item class="btn btn-primary cursor-pointer justify-start">item 1</c-menu-item>
+          <c-menu-item class="btn btn-primary cursor-pointer justify-start">item 2</c-menu-item>
+          <c-menu-item class="btn btn-primary cursor-pointer justify-start">item 3</c-menu-item>
+        </c-menu-items>
+      </c-menu>
+
+      <c-menu class="group m-auto">
+        <c-menu-button class="btn btn-primary cursor-pointer justify-start">
+          toggle
+          <c-icon class="icon text-xs ml-auto" href="img/icons.svg#to-right"></c-icon>
+        </c-menu-button>
+        <c-menu-items class="overflow-hidden" placement="right">
+          <c-menu-item class="btn btn-primary cursor-pointer justify-start">item 1</c-menu-item>
+          <c-menu-item class="btn btn-primary cursor-pointer justify-start">item 2</c-menu-item>
+          <c-menu-item class="btn btn-primary cursor-pointer justify-start">item 3</c-menu-item>
+        </c-menu-items>
+      </c-menu>
     </c-menu-items>
   </c-menu>
 
