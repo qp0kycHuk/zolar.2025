@@ -23,6 +23,8 @@
   --bg3    : rgb(var(--bg3-rgb));
   --default: rgb(var(--default-rgb));
 
+  /* easing */
+  --elastic: cubic-bezier(0.34, 2, 0.64, 1);
 }
 
 [data-theme="dark"] {

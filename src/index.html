@@ -1,5 +1,22 @@
 <%= require('./html-includes/header.html')() %>
 
-<div class="doc"></div>
+<section class="grow flex">
+  <button class="btn btn-fill btn-primary cursor-pointer gap-2" disabled>
+    toggle
+    <c-icon class="icon text-xs group-data-[active]:-rotate-90" href="img/icons.svg#to-right"></c-icon>
+  </button>
+  <c-menu class="group m-auto">
+    <c-menu-button class="btn btn-fill btn-primary cursor-pointer gap-2">
+      toggle
+      <c-icon class="icon text-xs group-data-[active]:-rotate-90" href="img/icons.svg#to-right"></c-icon>
+    </c-menu-button>
+    <c-menu-items class="overflow-hidden" placement="top">
+      <c-menu-item class="btn btn-primary cursor-pointer">item 1</c-menu-item>
+      <c-menu-item class="btn btn-primary cursor-pointer">item 2</c-menu-item>
+      <c-menu-item class="btn btn-primary cursor-pointer">item 3</c-menu-item>
+    </c-menu-items>
+  </c-menu>
+
+</section>
 
 <%= require('./html-includes/footer.html')() %>
