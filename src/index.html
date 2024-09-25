@@ -1,41 +1,4 @@
 <%= require('./html-includes/header.html')() %>
 
-<section class="grow flex items-center">
-  <c-menu class="">
-    <c-menu-button class="btn btn-fill btn-primary cursor-pointer gap-2 group">
-      toggle
-      <c-icon class="icon text-xs group-data-[active]:-rotate-90" href="img/icons.svg#to-right"></c-icon>
-    </c-menu-button>
-    <c-menu-items class="" placement="right">
-      <c-menu-item class="btn btn-primary cursor-pointer justify-start">item 1</c-menu-item>
-      <c-menu-item class="btn btn-primary cursor-pointer justify-start">item 2</c-menu-item>
-      <c-menu-item class="btn btn-primary cursor-pointer justify-start">item 3</c-menu-item>
-
-      <c-menu>
-        <c-menu-button class="btn btn-primary cursor-pointer justify-start group">
-          toggle
-          <c-icon class="icon text-xs group-data-[active]:-rotate-180 ml-auto" href="img/icons.svg#to-right"></c-icon>
-        </c-menu-button>
-        <c-menu-items class="overflow-hidden" placement="right">
-          <c-menu-item class="btn btn-primary cursor-pointer justify-start">item 1</c-menu-item>
-          <c-menu-item class="btn btn-primary cursor-pointer justify-start">item 2</c-menu-item>
-          <c-menu-item class="btn btn-primary cursor-pointer justify-start">item 3</c-menu-item>
-        </c-menu-items>
-      </c-menu>
-
-      <c-menu>
-        <c-menu-button class="btn btn-primary cursor-pointer justify-start group">
-          toggle
-          <c-icon class="icon text-xs group-data-[active]:-rotate-180 ml-auto" href="img/icons.svg#to-right"></c-icon>
-        </c-menu-button>
-        <c-menu-items class="overflow-hidden" placement="right">
-          <c-menu-item class="btn btn-primary cursor-pointer justify-start">item 1</c-menu-item>
-          <c-menu-item class="btn btn-primary cursor-pointer justify-start">item 2</c-menu-item>
-          <c-menu-item class="btn btn-primary cursor-pointer justify-start">item 3</c-menu-item>
-        </c-menu-items>
-      </c-menu>
-    </c-menu-items>
-  </c-menu>
-</section>
 
 <%= require('./html-includes/footer.html')() %>

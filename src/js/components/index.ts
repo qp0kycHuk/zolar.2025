@@ -1,7 +1,6 @@
 import counter from './counter'
 import icon from './icon'
-// import menu from '@qpokychuk/wc-menu'
-import menu from './menu/index'
+import menu from '@qpokychuk/wc-menu'
 
 function registerAll() {
   counter.register()
