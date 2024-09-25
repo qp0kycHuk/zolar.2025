@@ -1,14 +1,15 @@
 import { MenuItems } from './menuItems'
-import { Dispatcher, ActionTypes, Keys } from './utils'
+import { Dispatcher, ActionTypes, Keys, handleEvent } from './utils'
 
 class Menu extends Dispatcher {
   opened = false
   items?: MenuItems
   shadow = document.createElement('c-menu-shadow')
+  handleEvent = handleEvent
 
   connectedCallback() {
-    document.addEventListener('click', this.bindedClickHandler)
-    document.addEventListener('keyup', this.bindedKeyupHandler)
+    document.addEventListener('click', this)
+    document.addEventListener('keyup', this)
 
     this.addEventListener(ActionTypes.OpenMenu, this.open.bind(this))
     this.addEventListener(ActionTypes.CloseMenu, this.close.bind(this))
@@ -17,12 +18,11 @@ class Menu extends Dispatcher {
   }
 
   disconnectedCallback() {
-    document.removeEventListener('click', this.bindedClickHandler)
-    document.removeEventListener('keyup', this.bindedKeyupHandler)
+    document.removeEventListener('click', this)
+    document.removeEventListener('keyup', this)
   }
 
-  bindedClickHandler = this.clickHandler.bind(this)
-  clickHandler(event: MouseEvent) {
+  clickhandler(event: MouseEvent) {
     const target = event.target as Element
     const isShadow = this.shadow === target
     const isInner = this !== target && !this.contains(target) && this.items !== target && !this.items?.contains(target)
@@ -32,8 +32,7 @@ class Menu extends Dispatcher {
     }
   }
 
-  bindedKeyupHandler = this.keyupHandler.bind(this)
-  keyupHandler(event: KeyboardEvent) {
+  keyuphandler(event: KeyboardEvent) {
     if (event.key === Keys.Escape) {
       this.dispatch(ActionTypes.CloseMenu)
     }

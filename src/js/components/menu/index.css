@@ -108,3 +108,102 @@ c-menu-items[placement="left-end"] {
   bottom          : 0;
   transform-origin: bottom right;
 }
+
+c-menu-items[placement="over"] {
+  --translate-x: -50%;
+  --translate-y: -50%;
+
+  left            : 50%;
+  top             : 50%;
+  transform-origin: center;
+
+}
+
+c-menu-items[placement*="over-top"] {
+  bottom       : 0;
+  margin-bottom: calc(-1 * var(--offset, 0));
+}
+
+c-menu-items[placement="over-top"] {
+  --translate-x: -50%;
+
+  left            : 50%;
+  transform-origin: bottom;
+}
+
+c-menu-items[placement="over-top-start"] {
+  left            : 0;
+  transform-origin: bottom left;
+}
+
+c-menu-items[placement="over-top-end"] {
+  right           : 0;
+  transform-origin: bottom right;
+}
+
+
+c-menu-items[placement*="over-bottom"] {
+  top          : 0;
+  margin-bottom: calc(-1 * var(--offset, 0));
+}
+
+c-menu-items[placement="over-bottom"] {
+  --translate-x: -50%;
+
+  left            : 50%;
+  transform-origin: top;
+}
+
+c-menu-items[placement="over-bottom-start"] {
+  left            : 0;
+  transform-origin: top left;
+}
+
+c-menu-items[placement="over-bottom-end"] {
+  right           : 0;
+  transform-origin: top right;
+}
+
+c-menu-items[placement*="over-left"] {
+  left       : 0;
+  margin-left: calc(-1 * var(--offset, 0));
+}
+
+c-menu-items[placement="over-left"] {
+  --translate-y: -50%;
+
+  top             : 50%;
+  transform-origin: left;
+}
+
+c-menu-items[placement="over-left-start"] {
+  top             : 0;
+  transform-origin: top left;
+}
+
+c-menu-items[placement="over-left-end"] {
+  bottom          : 0;
+  transform-origin: bottom left;
+}
+
+c-menu-items[placement*="over-right"] {
+  right       : 0;
+  margin-right: calc(-1 * var(--offset, 0));
+}
+
+c-menu-items[placement="over-right"] {
+  --translate-y: -50%;
+
+  top             : 50%;
+  transform-origin: right;
+}
+
+c-menu-items[placement="over-right-start"] {
+  top             : 0;
+  transform-origin: top right;
+}
+
+c-menu-items[placement="over-right-end"] {
+  bottom          : 0;
+  transform-origin: bottom right;
+}

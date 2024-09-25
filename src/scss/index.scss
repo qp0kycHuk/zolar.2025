@@ -5,7 +5,9 @@
 @layer base {
   @import '@qpokychuk/ripple/index.css';
   @import 'swiper/scss';
-  @import '@qpokychuk/wc-menu/dist/index.css'
+  @import '../js/components/menu/index.css';
+
+  // @import '@qpokychuk/wc-menu/dist/index.css'
 }
 
 @import 'swiper/scss/pagination';
