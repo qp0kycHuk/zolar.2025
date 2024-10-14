@@ -7,34 +7,56 @@ import tab from 'npm-kit-tab'
 import toggle from 'npm-kit-toggle'
 import ripple from '@qpokychuk/ripple'
 import swiper from './swiper'
-import ymaps from './ymaps'
 import animations from './animations'
+import CanvasSnow from '@cycjimmy/canvas-snow'
 
 import '../scss/index.scss'
 
 window.addEventListener('DOMContentLoaded', () => loadHandler())
 
 function loadHandler() {
-  showPass.init()
   scrollTo.init()
   tab.init()
   toggle.init()
   ripple.init()
-  theme.init()
-  fancybox.init()
   phonemask.init('[type="tel"]')
 
   ripple.attach('.btn')
   ripple.attach('.waved')
   ripple.deAttach('.btn-text')
 
-  swiper.init()
-  ymaps.init()
   animations.init()
 
   scrollHandler()
   document.addEventListener('toggleopen', toggleOpenHandler)
   document.addEventListener('toggleclose', toggleCloseHandler)
+
+  const ball = document.querySelector('.ball') as HTMLElement
+
+  ball.addEventListener('click', () => {
+    ball.classList.toggle('shuffle')
+  })
+
+  const snow1 = ball.querySelector('.ball-snow-1') as HTMLCanvasElement
+  const snow2 = ball.querySelector('.ball-snow-2') as HTMLCanvasElement
+  const snow3 = ball.querySelector('.ball-snow-3') as HTMLCanvasElement
+
+  const canvasSnow1 = new CanvasSnow({
+    context: snow1,
+    cell: 300,
+  }).init()
+  const canvasSnow2 = new CanvasSnow({
+    context: snow2,
+    cell: 300,
+  }).init()
+  const canvasSnow3 = new CanvasSnow({
+    context: snow3,
+    cell: 300,
+  }).init()
+
+  canvasSnow1.start()
+  canvasSnow2.start()
+  canvasSnow3.start()
 }
 
 window.addEventListener('scroll', scrollHandler)

@@ -48,6 +48,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "@cycjimmy/canvas-snow": "^3.0.3",
     "@fancyapps/ui": "^4.0.27",
     "@qpokychuk/inter": "^1.0.2",
     "@qpokychuk/ripple": "^1.5.6",

@@ -1,9 +1,9 @@
 const elementsSizes = {
   xs: '24px',
   sm: '32px',
-  base: '42px',
-  lg: '52px',
-  xl: '64px',
+  base: '60px',
+  lg: '70px',
+  xl: '80px',
 }
 
 const headingStyles = {
@@ -50,7 +50,8 @@ module.exports = {
       default: withOpacity('--default-rgb'),
     },
     fontFamily: {
-      base: "'Inter', arial, helvetica, sans-serif",
+      base: "'Intro', arial, helvetica, sans-serif",
+      alt: "'Izhitsa', arial, helvetica, sans-serif",
     },
     zIndex: [0, 321, 322, 323, 324, 325, 326, 327, 328, 329, 'auto'],
     extend: {
@@ -74,7 +75,9 @@ module.exports = {
     },
   },
   plugins: [
-    require('@qpokychuk/tailwind-button-plugin'),
+    require('@qpokychuk/tailwind-button-plugin')({
+      colorHoverOffset: 15
+    }),
     require('@qpokychuk/tailwind-ratio-plugin'),
     require('@qpokychuk/tailwind-input-plugin')({
       border: "1px solid theme('colors.default / 40%')",
