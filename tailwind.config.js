@@ -23,14 +23,14 @@ module.exports = {
     },
     screens: {
       xs: 420 + 29.98 + 'px',
-      sm: 580 + 29.98 + 'px',
+      sm: 640 + 29.98 + 'px',
       md: 740 + 29.98 + 'px',
       lg: 1170 + 29.98 + 'px',
       xl: 1366 + 'px',
     },
     container: {
       xs: 420 + 'px',
-      sm: 580 + 'px',
+      sm: 640 + 'px',
       md: 740 + 'px',
       lg: 1170 + 'px',
       xl: 1230 + 'px',

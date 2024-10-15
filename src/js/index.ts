@@ -54,9 +54,9 @@ function loadHandler() {
     cell: 300,
   }).init()
 
-  canvasSnow1.start()
-  canvasSnow2.start()
-  canvasSnow3.start()
+  // canvasSnow1.start()
+  // canvasSnow2.start()
+  // canvasSnow3.start()
 }
 
 window.addEventListener('scroll', scrollHandler)
