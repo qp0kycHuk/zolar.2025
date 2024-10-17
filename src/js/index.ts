@@ -13,11 +13,16 @@ import CanvasSnow from '@cycjimmy/canvas-snow'
 import '../scss/index.scss'
 
 window.addEventListener('DOMContentLoaded', () => loadHandler())
+let canvasSnow1: any
+let canvasSnow2: any
+let canvasSnow3: any
 
 function loadHandler() {
   scrollTo.init()
   tab.init()
   toggle.init()
+  // @ts-ignore
+  window.toggle = toggle
   ripple.init()
   phonemask.init('[type="tel"]')
 
@@ -41,22 +46,22 @@ function loadHandler() {
   const snow2 = ball.querySelector('.ball-snow-2') as HTMLCanvasElement
   const snow3 = ball.querySelector('.ball-snow-3') as HTMLCanvasElement
 
-  const canvasSnow1 = new CanvasSnow({
+  canvasSnow1 = new CanvasSnow({
     context: snow1,
     cell: 300,
   }).init()
-  const canvasSnow2 = new CanvasSnow({
+  canvasSnow2 = new CanvasSnow({
     context: snow2,
     cell: 300,
   }).init()
-  const canvasSnow3 = new CanvasSnow({
+  canvasSnow3 = new CanvasSnow({
     context: snow3,
     cell: 300,
   }).init()
 
   canvasSnow1.start()
   canvasSnow2.start()
-  canvasSnow3.start()
+  // canvasSnow3.start()
 }
 
 window.addEventListener('scroll', scrollHandler)
@@ -65,16 +70,22 @@ function scrollHandler() {
   document.body.classList.toggle('scroll-top', window.scrollY == 0)
 }
 
-const menusIds = ['lk-menu', 'menu', 'catalog-filter']
+const menusIds = ['lk-menu', 'menu', 'catalog-filter', 'conditions', 'prize-dialog']
 
 function toggleOpenHandler(event: any) {
   if (menusIds.includes(event.detail.target.id)) {
     document.body.classList.add('menu-opened')
+    canvasSnow1?.stop?.()
+    canvasSnow2?.stop?.()
+    // canvasSnow3?.stop?.()
   }
 }
 
 function toggleCloseHandler(event: any) {
   if (menusIds.includes(event.detail.target.id)) {
     document.body.classList.remove('menu-opened')
+    canvasSnow1?.start?.()
+    canvasSnow2?.start?.()
+    // canvasSnow3?.start?.()
   }
 }

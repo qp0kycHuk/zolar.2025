@@ -1,6 +1,17 @@
 <%= require('./html-includes/header.html')() %>
 
 <div class="main">
+  <div class="prize-dialog" id="prize-dialog">
+    <div class="prize-dialog-content">
+      <img src="/img/prize-gift.png" alt="" />
+      <div class="mt-4 text-xl font-bold sm:mt-8 sm:text-3xl text-sec" id="prize-name">Ювелирный приз</div>
+
+      <div class="prize-dialog-close" data-toggle-link="prize-dialog">
+        <c-icon class="icon" href="/img/icons.svg#cross"></c-icon>
+      </div>
+    </div>
+  </div>
+
   <div class="background">
     <img src="img/background.jpg" alt="" class="object-cover background-image absolute-fit" />
     <div class="background-shadow background-shadow-1"></div>
@@ -17,19 +28,22 @@
     <div class="background-light background-light-9"></div>
     <div class="background-light background-light-10"></div>
     <div class="background-garland">
-      <img src="img/garland.png" alt="" />
+      <img src="img/garland.png" alt="" class="object-cover object-bottom size-full" />
     </div>
   </div>
   <div class="content">
-    <div class="logo">
-      <img src="img/logo.svg" alt="" />
+    <div class="logo ratio ratio-[444/100]" data-animation="fadeInLeft">
+      <img src="img/logo.svg" alt="" class="absolute-fit" />
     </div>
-    <div class="title">
+    <div class="mb-auto"></div>
+    <div class="title" data-animation="fadeInLeft" data-delay="0.05">
       Шар потряси- <br />
       <span class="uppercase">подарок получи!</span>
     </div>
-    <div class="prize">
-      <img src="img/prize-logo.svg" alt="" class="prize-image" />
+    <div class="prize" data-animation="fadeInLeft" data-delay="0.1">
+      <div class="ratio ratio-[153/69] w-[153px]">
+        <img src="img/prize-logo.svg" alt="" class="prize-image absolute-fit" />
+      </div>
       <div class="prize-content">
         <span class="prize-title"> Главный приз - </span><br />
         <span class="prize-value">
@@ -38,7 +52,7 @@
         >
       </div>
     </div>
-    <div class="form">
+    <div class="form" data-animation="fadeInLeft" data-delay="0.15">
       <div class="flex flex-col gap-3 xs:gap-6">
         <input type="text" class="w-full input" placeholder="Фамилия Имя Отчество" />
         <input type="tel" class="w-full input" placeholder="Телефон" />
@@ -48,7 +62,7 @@
         <button class="px-12 rounded-full btn btn-primary btn-fill form-btn">
           <span class="text-black">Потрясти шар</span>
         </button>
-        <button class="btn btn-primary btn-text">
+        <button class="btn btn-primary btn-text" data-toggle-link="conditions">
           <span class="text-xl font-bold underline">Условия акции и призы</span>
         </button>
       </div>
@@ -58,32 +72,119 @@
       </div>
     </div>
     <div class="mt-10"></div>
-    <div class="footer">
+    <div class="footer" data-animation="fadeInLeft" data-delay="0.2">
       <span class="opacity-50"> © «Золотой Ларец», 2024 </span>
       <a href="javascript:;" class="opacity-50 hover-underline">Политика конфиденциальности </a>
       <a href="javascript:;" class="opacity-50 hover-underline">Пользовательское соглашение</a>
     </div>
   </div>
 
-  <div class="ball">
-    <img src="img/ball.png" alt="" class="ball-image" />
-    <div class="ball-inner">
-      <div class="ball-snow ball-snow-1"></div>
-      <div class="ball-snow ball-snow-2"></div>
-      <div class="ball-snow ball-snow-3"></div>
-      <div class="ball-light ball-light-1"></div>
-      <div class="ball-light ball-light-2"></div>
+  <div class="ball-wrapper" id="ball" data-animation="fadeInUp" data-delay="0.25">
+    <div class="ball-content">
+      <div class="ball">
+        <img src="img/ball.png" alt="" class="ball-image" />
+        <div class="ball-inner">
+          <div class="ball-snow ball-snow-1"></div>
+          <div class="ball-snow ball-snow-2"></div>
+          <div class="ball-snow ball-snow-3"></div>
+          <div class="ball-light ball-light-1"></div>
+          <div class="ball-light ball-light-2"></div>
+        </div>
+        <div class="ball-stand"></div>
+      </div>
     </div>
-    <div class="ball-stand"></div>
   </div>
 
-  <div class="conditions">
-    <div class="conditions-date"></div>
-    <div class="conditions-title"></div>
-    <div class="conditions-list"></div>
+  <div class="conditions" id="conditions">
+    <div class="conditions-date">с 10 декабря 2024 по 10 января 2025</div>
+    <div class="conditions-title">Чтобы выиграть подарок, Вам нужно:</div>
+    <div class="conditions-list flex flex-col gap-4">
+      <div class="flex items-center gap-4">
+        <c-icon class="icon text-primary" href="/img/icons.svg#triangle-right"></c-icon>
+        <span class="xs:text-xl font-book"
+          >Купить на сумму от <span class="font-base font-bold">35 000 рублей;</span></span
+        >
+      </div>
 
-    <div class="conditions-grid">
-      <div class="conditions-item"></div>
+      <div class="flex items-center gap-4">
+        <c-icon class="icon text-primary" href="/img/icons.svg#triangle-right"></c-icon>
+        <span class="xs:text-xl font-book">Зарегистрироваться на лендинге;</span>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <c-icon class="icon text-primary" href="/img/icons.svg#triangle-right"></c-icon>
+        <span class="xs:text-xl font-book">Нажать на кнопку "потрясти шар";</span>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <c-icon class="icon text-primary" href="/img/icons.svg#triangle-right"></c-icon>
+        <span class="xs:text-xl font-book">Выиграть один из призов.</span>
+      </div>
+    </div>
+    <div class="flex gap-6 mb-6 max-lg:flex-wrap">
+      <div class="conditions-item">
+        <div>
+          <img src="img/conditions-1.svg" alt="" />
+        </div>
+        <div class="mt-5 font-book">Дополнительная скидка</div>
+      </div>
+      <div class="conditions-item">
+        <div>
+          <img src="img/conditions-2.svg" alt="" />
+        </div>
+        <div class="mt-5 font-book">Подарок от компании</div>
+      </div>
+      <div class="conditions-item">
+        <div>
+          <img src="img/conditions-3.svg" alt="" />
+        </div>
+        <div class="mt-5 font-book">Ювелирное украшение</div>
+      </div>
+      <div class="conditions-item">
+        <div class="flex items-center gap-3">
+          <img src="img/conditions-4.1.svg" alt="" />
+          <img src="img/conditions-4.2.svg" alt="" />
+        </div>
+        <div class="mt-5 font-book">Золотое колье от бренда МЭЮЗ</div>
+      </div>
+    </div>
+    <div class="w-full">
+      <div class="conditions-main">
+        <div class="conditions-main-image max-md:hidden">
+          <img src="img/conditions-main.svg" alt="" />
+        </div>
+        <div class="conditions-main-content flex items-center gap-5">
+          <div>
+            <div class="flex items-center gap-5 md:hidden mb-5">
+              <img src="img/conditions-main.svg" alt="" />
+              <img src="img/conditions-artcouture.svg" alt="" />
+            </div>
+            <div class="text-sm xs:text-xl font-book">Главный приз -</div>
+            <div class="text-xl xs:text-2xl font-bold">
+              Создание индивидуального украшения <br class="max-xs:hidden" />
+              в мануфактуре Art-Couture
+            </div>
+          </div>
+          <img src="img/conditions-artcouture.svg" alt="" class="max-md:hidden" />
+        </div>
+      </div>
+    </div>
+    <div class="mt-14 text-xs opacity-50 text-white font-book">
+      *Приобретение покупателем ювелирных украшений на условиях настоящего положения означает согласие покупателя с
+      правилами проведения акции. Установленный настоящим положением порядок проведения акции может быть изменен без
+      предварительного уведомления Покупателей. В том числе ООО "Золотой ларец" оставляет за собой право изменить срок
+      действия акции. Копии настоящего Положения размещаются на сайте zolar.ru, а также на информационных стендах
+      магазинов, участвующих в акции. Подробная информация о правилах проведения акции, количестве призов, результатах
+      розыгрыша,сроках,месте и порядке их получения уточняйте на сайте zolar.ru
+    </div>
+
+    <div class="conditions-close lg:hidden" data-toggle-link="conditions">
+      <c-icon class="icon" href="/img/icons.svg#cross"></c-icon>
+    </div>
+  </div>
+  <div class="conditions-shadow">
+    <div class="conditions-close max-lg:hidden">
+      <c-icon class="icon" href="/img/icons.svg#cross"></c-icon>
     </div>
   </div>
 </div>
