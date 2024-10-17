@@ -8,6 +8,7 @@ import toggle from 'npm-kit-toggle'
 import ripple from '@qpokychuk/ripple'
 import swiper from './swiper'
 import animations from './animations'
+import CanvasSnow from '@cycjimmy/canvas-snow'
 
 import '../scss/index.scss'
 
@@ -25,10 +26,6 @@ function loadHandler() {
   ripple.deAttach('.btn-text')
 
   animations.init()
-  swiper.init()
-  showPass.init()
-  theme.init()
-  fancybox.init()
 
   scrollHandler()
   document.addEventListener('toggleopen', toggleOpenHandler)
@@ -57,9 +54,9 @@ function loadHandler() {
     cell: 300,
   }).init()
 
-  // canvasSnow1.start()
-  // canvasSnow2.start()
-  // canvasSnow3.start()
+  canvasSnow1.start()
+  canvasSnow2.start()
+  canvasSnow3.start()
 }
 
 window.addEventListener('scroll', scrollHandler)
