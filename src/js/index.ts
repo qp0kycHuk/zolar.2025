@@ -33,6 +33,33 @@ function loadHandler() {
   scrollHandler()
   document.addEventListener('toggleopen', toggleOpenHandler)
   document.addEventListener('toggleclose', toggleCloseHandler)
+
+  const ball = document.querySelector('.ball') as HTMLElement
+
+  ball.addEventListener('click', () => {
+    ball.classList.toggle('shuffle')
+  })
+
+  const snow1 = ball.querySelector('.ball-snow-1') as HTMLCanvasElement
+  const snow2 = ball.querySelector('.ball-snow-2') as HTMLCanvasElement
+  const snow3 = ball.querySelector('.ball-snow-3') as HTMLCanvasElement
+
+  const canvasSnow1 = new CanvasSnow({
+    context: snow1,
+    cell: 300,
+  }).init()
+  const canvasSnow2 = new CanvasSnow({
+    context: snow2,
+    cell: 300,
+  }).init()
+  const canvasSnow3 = new CanvasSnow({
+    context: snow3,
+    cell: 300,
+  }).init()
+
+  // canvasSnow1.start()
+  // canvasSnow2.start()
+  // canvasSnow3.start()
 }
 
 window.addEventListener('scroll', scrollHandler)
