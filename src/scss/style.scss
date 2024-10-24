@@ -566,11 +566,73 @@ body {
     }
   }
 
+  // & {
+  //   animation: jump-shaking 1s 6s linear 1;
+
+  // }
+
+  // & &-snow {
+  //   &-2 {
+  //     animation: snow-shuffle 1s 6s linear 1;
+  //   }
+
+  //   &-3 {
+  //     animation: snow-shuffle 1s 6s linear 1 reverse;
+
+  //   }
+  // }
+
   &-inner,
   &-stand {
     position: absolute;
   }
 
+}
+
+@keyframes jump-shaking {
+  0% {
+    transform: translateX(0)
+  }
+
+  10% {
+    transform: translateY(-5%)
+  }
+
+  20% {
+    transform: translateY(-5%) rotate(5deg)
+  }
+
+  30% {
+    transform: translateY(-5%) rotate(-5deg)
+  }
+
+  40% {
+    transform: translateY(-5%) rotate(5deg)
+  }
+
+  50% {
+    transform: translateY(-5%) rotate(-5deg)
+  }
+
+  60% {
+    transform: translateY(-5%) rotate(5deg)
+  }
+
+  70% {
+    transform: translateY(-5%) rotate(-5deg)
+  }
+
+  80% {
+    transform: translateY(-5%) rotate(5deg)
+  }
+
+  90% {
+    transform: translateY(-5%)
+  }
+
+  100% {
+    transform: translateY(0) rotate(0)
+  }
 }
 
 @keyframes wobble {
@@ -679,9 +741,10 @@ body {
     color        : rgba(37, 57, 111, 1);
 
     @media(max-width: theme('screens.xs')) {
-      font-size    : 14px;
-      padding-left : 15px;
-      padding-right: 15px;
+      font-size    : 16px;
+      padding-left : 20px;
+      text-align   : center;
+      padding-right: 20px;
       width        : 100%;
       margin-bottom: 40px;
     }
@@ -733,8 +796,22 @@ body {
     }
   }
 
+  :is(&-date, &-title, &-list, &-item, &-main, &-terms) {
+    transition: opacity .25s .25s ease, transform .25s .25s ease;
+  }
+
+  &:not(.toggle-active) :is(&-date, &-title, &-list, &-item, &-main, &-terms) {
+    opacity  : 0;
+    transform: translateX(32px);
+
+    @media(max-width: theme('screens.lg')) {
+      transform: translateX(12px);
+    }
+  }
+
   &-item {
     flex-grow      : 1;
+    width          : 25%;
     padding        : 20px;
     background     : rgba(40, 16, 18, 0.6);
     backdrop-filter: blur(20px);
@@ -743,6 +820,14 @@ body {
     font-size      : 20px;
     line-height    : 1;
     color          : #fff;
+
+
+    @media(max-width: theme('screens.sm')) {
+      width      : 100%;
+      display    : flex;
+      align-items: center;
+      gap        : 16px;
+    }
 
     @media(max-width: theme('screens.xs')) {
       font-size: 14px;

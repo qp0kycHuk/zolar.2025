@@ -24,6 +24,7 @@ function loadHandler() {
   // @ts-ignore
   window.toggle = toggle
   ripple.init()
+  fancybox.init()
   phonemask.init('[type="tel"]')
 
   ripple.attach('.btn')
@@ -38,30 +39,28 @@ function loadHandler() {
 
   const ball = document.querySelector('.ball') as HTMLElement
 
-  ball.addEventListener('click', () => {
-    ball.classList.toggle('shuffle')
-  })
+  if (ball) {
+    const snow1 = ball.querySelector('.ball-snow-1') as HTMLCanvasElement
+    const snow2 = ball.querySelector('.ball-snow-2') as HTMLCanvasElement
+    const snow3 = ball.querySelector('.ball-snow-3') as HTMLCanvasElement
 
-  const snow1 = ball.querySelector('.ball-snow-1') as HTMLCanvasElement
-  const snow2 = ball.querySelector('.ball-snow-2') as HTMLCanvasElement
-  const snow3 = ball.querySelector('.ball-snow-3') as HTMLCanvasElement
+    canvasSnow1 = new CanvasSnow({
+      context: snow1,
+      cell: 300,
+    }).init()
+    canvasSnow2 = new CanvasSnow({
+      context: snow2,
+      cell: 300,
+    }).init()
+    canvasSnow3 = new CanvasSnow({
+      context: snow3,
+      cell: 300,
+    }).init()
 
-  canvasSnow1 = new CanvasSnow({
-    context: snow1,
-    cell: 300,
-  }).init()
-  canvasSnow2 = new CanvasSnow({
-    context: snow2,
-    cell: 300,
-  }).init()
-  canvasSnow3 = new CanvasSnow({
-    context: snow3,
-    cell: 300,
-  }).init()
-
-  canvasSnow1.start()
-  canvasSnow2.start()
-  // canvasSnow3.start()
+    canvasSnow1.start()
+    canvasSnow2.start()
+    canvasSnow3.start()
+  }
 }
 
 window.addEventListener('scroll', scrollHandler)
@@ -75,8 +74,8 @@ const menusIds = ['lk-menu', 'menu', 'catalog-filter', 'conditions', 'prize-dial
 function toggleOpenHandler(event: any) {
   if (menusIds.includes(event.detail.target.id)) {
     document.body.classList.add('menu-opened')
-    canvasSnow1?.stop?.()
-    canvasSnow2?.stop?.()
+    // canvasSnow1?.stop?.()
+    // canvasSnow2?.stop?.()
     // canvasSnow3?.stop?.()
   }
 }
@@ -84,8 +83,8 @@ function toggleOpenHandler(event: any) {
 function toggleCloseHandler(event: any) {
   if (menusIds.includes(event.detail.target.id)) {
     document.body.classList.remove('menu-opened')
-    canvasSnow1?.start?.()
-    canvasSnow2?.start?.()
+    // canvasSnow1?.start?.()
+    // canvasSnow2?.start?.()
     // canvasSnow3?.start?.()
   }
 }
